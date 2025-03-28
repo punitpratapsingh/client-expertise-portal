@@ -2,38 +2,45 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Code, Database, LayoutDashboard, LineChart, Smartphone, Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const ServicesSection = () => {
   const services = [
     {
       icon: <LineChart className="h-8 w-8 text-brand-purple" />,
       title: "Performance Auditing",
-      description: "Comprehensive audits of your website's performance metrics, identifying all bottlenecks and opportunities for improvement."
+      description: "Comprehensive audits of your website's performance metrics, identifying all bottlenecks and opportunities for improvement.",
+      link: "/performance-auditing"
     },
     {
       icon: <Code className="h-8 w-8 text-brand-purple" />,
       title: "Frontend Optimization",
-      description: "Code refactoring, asset optimization, and implementation of modern web performance techniques."
+      description: "Code refactoring, asset optimization, and implementation of modern web performance techniques.",
+      link: "#"
     },
     {
       icon: <Database className="h-8 w-8 text-brand-purple" />,
       title: "Backend Optimization",
-      description: "API optimization, database tuning, and server-side rendering improvements to speed up data delivery."
+      description: "API optimization, database tuning, and server-side rendering improvements to speed up data delivery.",
+      link: "#"
     },
     {
       icon: <Smartphone className="h-8 w-8 text-brand-purple" />,
       title: "Mobile Performance",
-      description: "Mobile-specific optimizations to ensure fast, smooth experiences on all devices and network conditions."
+      description: "Mobile-specific optimizations to ensure fast, smooth experiences on all devices and network conditions.",
+      link: "#"
     },
     {
       icon: <LayoutDashboard className="h-8 w-8 text-brand-purple" />,
       title: "Monitoring & Analytics",
-      description: "Ongoing performance monitoring with custom dashboards and alerts to prevent future regressions."
+      description: "Ongoing performance monitoring with custom dashboards and alerts to prevent future regressions.",
+      link: "#"
     },
     {
       icon: <Sparkles className="h-8 w-8 text-brand-purple" />,
       title: "UX Enhancement",
-      description: "Performance-focused UX improvements that create smoother, more responsive interfaces users love."
+      description: "Performance-focused UX improvements that create smoother, more responsive interfaces users love.",
+      link: "#"
     }
   ];
 
@@ -55,7 +62,13 @@ const ServicesSection = () => {
                   {service.icon}
                 </div>
                 <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
+                <p className="text-gray-600 mb-4">{service.description}</p>
+                <Link 
+                  to={service.link} 
+                  className={`text-brand-purple hover:underline font-medium inline-flex items-center ${service.link === "#" ? "pointer-events-none opacity-50" : ""}`}
+                >
+                  Learn more →
+                </Link>
               </CardContent>
             </Card>
           ))}

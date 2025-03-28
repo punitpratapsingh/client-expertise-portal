@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -16,16 +17,17 @@ const Navbar = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex items-center">
-            <a href="#" className="text-2xl font-bold gradient-text">WebVitalPro</a>
+            <Link to="/" className="text-2xl font-bold gradient-text">WebVitalPro</Link>
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#services" className="text-gray-700 hover:text-brand-purple transition-colors">Services</a>
-            <a href="#web-vitals" className="text-gray-700 hover:text-brand-purple transition-colors">Web Vitals</a>
-            <a href="#testimonials" className="text-gray-700 hover:text-brand-purple transition-colors">Testimonials</a>
-            <a href="#team" className="text-gray-700 hover:text-brand-purple transition-colors">Team</a>
-            <a href="#pricing" className="text-gray-700 hover:text-brand-purple transition-colors">Pricing</a>
+            <Link to="/performance-auditing" className="text-gray-700 hover:text-brand-purple transition-colors">Performance Auditing</Link>
+            <a href="/#services" className="text-gray-700 hover:text-brand-purple transition-colors">Services</a>
+            <a href="/#web-vitals" className="text-gray-700 hover:text-brand-purple transition-colors">Web Vitals</a>
+            <a href="/#testimonials" className="text-gray-700 hover:text-brand-purple transition-colors">Testimonials</a>
+            <a href="/#team" className="text-gray-700 hover:text-brand-purple transition-colors">Team</a>
+            <a href="/#pricing" className="text-gray-700 hover:text-brand-purple transition-colors">Pricing</a>
             <Button className="bg-brand-purple hover:bg-brand-purple_light">Contact Us</Button>
           </div>
 
@@ -41,11 +43,12 @@ const Navbar = () => {
         {mobileMenuOpen && (
           <div className="md:hidden py-4 border-t animate-fade-in">
             <div className="flex flex-col space-y-4">
-              <a href="#services" className="text-gray-700 hover:text-brand-purple transition-colors py-2" onClick={toggleMobileMenu}>Services</a>
-              <a href="#web-vitals" className="text-gray-700 hover:text-brand-purple transition-colors py-2" onClick={toggleMobileMenu}>Web Vitals</a>
-              <a href="#testimonials" className="text-gray-700 hover:text-brand-purple transition-colors py-2" onClick={toggleMobileMenu}>Testimonials</a>
-              <a href="#team" className="text-gray-700 hover:text-brand-purple transition-colors py-2" onClick={toggleMobileMenu}>Team</a>
-              <a href="#pricing" className="text-gray-700 hover:text-brand-purple transition-colors py-2" onClick={toggleMobileMenu}>Pricing</a>
+              <Link to="/performance-auditing" className="text-gray-700 hover:text-brand-purple transition-colors py-2" onClick={toggleMobileMenu}>Performance Auditing</Link>
+              <a href="/#services" className="text-gray-700 hover:text-brand-purple transition-colors py-2" onClick={toggleMobileMenu}>Services</a>
+              <a href="/#web-vitals" className="text-gray-700 hover:text-brand-purple transition-colors py-2" onClick={toggleMobileMenu}>Web Vitals</a>
+              <a href="/#testimonials" className="text-gray-700 hover:text-brand-purple transition-colors py-2" onClick={toggleMobileMenu}>Testimonials</a>
+              <a href="/#team" className="text-gray-700 hover:text-brand-purple transition-colors py-2" onClick={toggleMobileMenu}>Team</a>
+              <a href="/#pricing" className="text-gray-700 hover:text-brand-purple transition-colors py-2" onClick={toggleMobileMenu}>Pricing</a>
               <Button className="bg-brand-purple hover:bg-brand-purple_light w-full" onClick={toggleMobileMenu}>Contact Us</Button>
             </div>
           </div>
