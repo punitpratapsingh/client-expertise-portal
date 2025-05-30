@@ -17,7 +17,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/" className="text-2xl font-bold gradient-text">PerformatiLabs</Link>
+            <Link to="/" className="text-2xl font-bold gradient-text">Performetix</Link>
           </div>
 
           {/* Desktop Menu */}
