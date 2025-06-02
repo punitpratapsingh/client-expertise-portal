@@ -87,30 +87,30 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section id="testimonials" className="section-padding bg-brand-purple/5">
+    <section id="testimonials" className="section-padding bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
       <div className="container-custom">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="mb-4">Client <span className="gradient-text">Success Stories</span></h2>
-          <p className="text-lg text-gray-600">
+          <h2 className="mb-6">Client <span className="gradient-text">Success Stories</span></h2>
+          <p className="text-lg text-gray-600 leading-relaxed">
             Don't just take our word for it. Here's what our clients have to say about our web performance expertise.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {displayedTestimonials.map((testimonial) => (
-            <Card key={testimonial.id} className="border border-gray-200 shadow-sm">
-              <CardContent className="p-6">
-                <div className="flex justify-between items-start mb-4">
+            <Card key={testimonial.id} className="interactive-card border-0 shadow-lg">
+              <CardContent className="p-8">
+                <div className="flex justify-between items-start mb-6">
                   <div className="flex">{renderStars(testimonial.rating)}</div>
-                  <Quote className="h-8 w-8 text-brand-purple/20" />
+                  <Quote className="h-8 w-8 text-blue-200" />
                 </div>
-                <p className="text-gray-700 mb-6 min-h-[120px]">{testimonial.content}</p>
+                <p className="text-gray-700 mb-8 min-h-[120px] leading-relaxed">{testimonial.content}</p>
                 <div className="flex items-center">
-                  <div className="bg-gray-200 text-brand-purple font-bold h-12 w-12 rounded-full flex items-center justify-center mr-4">
+                  <div className="bg-gradient-to-br from-blue-500 to-indigo-500 text-white font-bold h-12 w-12 rounded-full flex items-center justify-center mr-4 shadow-lg">
                     {testimonial.logo.substring(0, 2)}
                   </div>
                   <div>
-                    <p className="font-bold">{testimonial.author}</p>
+                    <p className="font-bold text-gray-800">{testimonial.author}</p>
                     <p className="text-sm text-gray-600">{testimonial.position}</p>
                   </div>
                 </div>
@@ -119,8 +119,8 @@ const TestimonialsSection = () => {
           ))}
         </div>
 
-        <div className="flex justify-center mt-8 space-x-2">
-          <Button variant="outline" size="icon" onClick={prevPage}>
+        <div className="flex justify-center mt-12 space-x-2">
+          <Button variant="outline" size="icon" onClick={prevPage} className="rounded-full border-2 hover:bg-white/80">
             <ChevronLeft className="h-4 w-4" />
           </Button>
           {Array(pageCount)
@@ -131,33 +131,35 @@ const TestimonialsSection = () => {
                 variant={currentPage === index ? "default" : "outline"}
                 size="icon"
                 onClick={() => setCurrentPage(index)}
-                className={currentPage === index ? "bg-brand-purple" : ""}
+                className={`rounded-full border-2 ${currentPage === index ? "bg-gradient-to-r from-blue-600 to-indigo-600" : "hover:bg-white/80"}`}
               >
                 {index + 1}
               </Button>
             ))}
-          <Button variant="outline" size="icon" onClick={nextPage}>
+          <Button variant="outline" size="icon" onClick={nextPage} className="rounded-full border-2 hover:bg-white/80">
             <ChevronRight className="h-4 w-4" />
           </Button>
         </div>
 
-        <div className="mt-16 p-8 bg-white rounded-xl border border-gray-200 shadow-sm">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            <div>
-              <h3 className="text-4xl font-bold text-brand-purple mb-2">500+</h3>
-              <p className="text-gray-600">Websites Optimized</p>
-            </div>
-            <div>
-              <h3 className="text-4xl font-bold text-brand-purple mb-2">42%</h3>
-              <p className="text-gray-600">Average Speed Increase</p>
-            </div>
-            <div>
-              <h3 className="text-4xl font-bold text-brand-purple mb-2">27%</h3>
-              <p className="text-gray-600">Conversion Improvement</p>
-            </div>
-            <div>
-              <h3 className="text-4xl font-bold text-brand-purple mb-2">98%</h3>
-              <p className="text-gray-600">Client Satisfaction</p>
+        <div className="mt-16">
+          <div className="glass-card rounded-3xl p-8 shadow-xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+              <div>
+                <h3 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-2">500+</h3>
+                <p className="text-gray-600">Websites Optimized</p>
+              </div>
+              <div>
+                <h3 className="text-4xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent mb-2">42%</h3>
+                <p className="text-gray-600">Average Speed Increase</p>
+              </div>
+              <div>
+                <h3 className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">27%</h3>
+                <p className="text-gray-600">Conversion Improvement</p>
+              </div>
+              <div>
+                <h3 className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-2">98%</h3>
+                <p className="text-gray-600">Client Satisfaction</p>
+              </div>
             </div>
           </div>
         </div>
