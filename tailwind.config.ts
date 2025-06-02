@@ -53,19 +53,65 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-        brand: {
-          primary: '#3B82F6',
-          secondary: '#6366F1',
-          accent: '#8B5CF6',
-          light: '#F1F5F9',
-          lighter: '#F8FAFC',
+        // Meta Design System Colors
+        meta: {
+          blue: {
+            50: '#F0F8FF',
+            100: '#E6F3FF',
+            200: '#CCE6FF',
+            300: '#99D1FF',
+            400: '#66BBFF',
+            500: '#1877F2', // Meta Blue
+            600: '#1565C0',
+            700: '#0D47A1',
+            800: '#042C5C',
+            900: '#021D3D'
+          },
+          gray: {
+            50: '#FAFBFC',
+            100: '#F5F6F7',
+            200: '#E4E6EA',
+            300: '#CED0D4',
+            400: '#BEC3C9',
+            500: '#8A8D91',
+            600: '#65676B',
+            700: '#4B4F56',
+            800: '#3A3B3C',
+            900: '#242526'
+          },
+          green: {
+            50: '#F0FFF4',
+            100: '#E6FFFA',
+            400: '#42D392',
+            500: '#00A82D'
+          },
+          purple: {
+            50: '#F8F4FF',
+            100: '#F0E6FF',
+            500: '#8B5FBF'
+          }
         }
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				sm: 'calc(var(--radius) - 4px)',
+        'meta': '12px', // Meta's signature border radius
+        'meta-lg': '16px',
+        'meta-xl': '24px'
 			},
+			fontFamily: {
+        'meta': ['SF Pro Display', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        'meta-text': ['SF Pro Text', 'Helvetica Neue', 'Arial', 'sans-serif']
+      },
+			boxShadow: {
+        'meta-sm': '0 1px 2px rgba(0, 0, 0, 0.04)',
+        'meta': '0 2px 8px rgba(0, 0, 0, 0.08)',
+        'meta-lg': '0 8px 24px rgba(0, 0, 0, 0.12)',
+        'meta-xl': '0 16px 40px rgba(0, 0, 0, 0.16)',
+        'meta-2xl': '0 24px 64px rgba(0, 0, 0, 0.2)',
+        'meta-hover': '0 4px 12px rgba(24, 119, 242, 0.15)'
+      },
 			keyframes: {
 				'accordion-down': {
 					from: {
@@ -83,17 +129,15 @@ export default {
 						height: '0'
 					}
 				},
-        'fade-in': {
-          '0%': {
-            opacity: '0',
-            transform: 'translateY(10px)'
+        'meta-float': {
+          '0%, 100%': {
+            transform: 'translateY(0px)'
           },
-          '100%': {
-            opacity: '1',
-            transform: 'translateY(0)'
+          '50%': {
+            transform: 'translateY(-8px)'
           }
         },
-        'pulse-slow': {
+        'meta-pulse': {
           '0%, 100%': {
             opacity: 1
           },
@@ -101,23 +145,34 @@ export default {
             opacity: 0.8
           }
         },
-        'slide-up': {
+        'meta-slide-up': {
           '0%': {
             opacity: '0',
-            transform: 'translateY(20px)'
+            transform: 'translateY(16px)'
           },
           '100%': {
             opacity: '1',
             transform: 'translateY(0)'
+          }
+        },
+        'meta-scale': {
+          '0%': {
+            opacity: '0',
+            transform: 'scale(0.95)'
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'scale(1)'
           }
         }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-        'fade-in': 'fade-in 0.5s ease-out',
-        'pulse-slow': 'pulse-slow 3s infinite ease-in-out',
-        'slide-up': 'slide-up 0.6s ease-out'
+        'meta-float': 'meta-float 4s ease-in-out infinite',
+        'meta-pulse': 'meta-pulse 2s ease-in-out infinite',
+        'meta-slide-up': 'meta-slide-up 0.6s ease-out',
+        'meta-scale': 'meta-scale 0.4s ease-out'
 			}
 		}
 	},

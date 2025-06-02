@@ -1,152 +1,158 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import { BarChart, Clock, Zap } from "lucide-react";
+import { BarChart, Clock, Zap, TrendingUp, CheckCircle } from "lucide-react";
 
 const WebVitalsSection = () => {
+  const problems = [
+    {
+      icon: <Clock className="h-6 w-6" />,
+      title: "Largest Contentful Paint (LCP)",
+      description: "Slow LCP frustrates users waiting for content, leading to high bounce rates and lost revenue.",
+      impacts: [
+        "25% increase in bounce rate",
+        "18% decrease in conversions", 
+        "Lower search ranking position"
+      ],
+      color: "red"
+    },
+    {
+      icon: <Zap className="h-6 w-6" />,
+      title: "First Input Delay (FID)",
+      description: "Long input delays prevent user interactions, creating frustrating experiences that drive customers away.",
+      impacts: [
+        "38% lower session duration",
+        "23% fewer page views per session",
+        "Higher customer acquisition costs"
+      ],
+      color: "orange"
+    },
+    {
+      icon: <BarChart className="h-6 w-6" />,
+      title: "Cumulative Layout Shift (CLS)",
+      description: "Unexpected layout shifts cause misclicks and frustration, damaging user experience and brand perception.",
+      impacts: [
+        "24% abandonment on checkout",
+        "15% decrease in form submissions",
+        "Damaged brand perception"
+      ],
+      color: "purple"
+    }
+  ];
+
+  const solutions = [
+    "Asset optimization and compression",
+    "Code splitting and lazy loading", 
+    "Layout stabilization techniques",
+    "Critical path optimization",
+    "Server-side rendering improvements"
+  ];
+
   return (
-    <section id="web-vitals" className="section-padding bg-gray-50">
-      <div className="container-custom">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="mb-4">Core Web Vitals <span className="gradient-text">Pain Points</span></h2>
-          <p className="text-lg text-gray-600">
-            Poor web performance directly impacts your bottom line. Slow websites frustrate users,
-            reduce conversions, and hurt your search rankings.
+    <section id="web-vitals" className="meta-section bg-white">
+      <div className="meta-container">
+        {/* Section Header */}
+        <div className="text-center max-w-4xl mx-auto mb-20">
+          <div className="meta-badge mb-6 animate-meta-scale">
+            <TrendingUp className="w-4 h-4 mr-2" />
+            <span>Core Web Vitals</span>
+          </div>
+          <h2 className="mb-8 meta-text-balance">
+            Performance Issues <span className="meta-gradient-text">Costing You Revenue</span>
+          </h2>
+          <p className="text-xl text-meta-gray-600 leading-relaxed meta-text-balance">
+            Poor web performance directly impacts your bottom line. Slow websites frustrate users, reduce conversions, and hurt search rankings.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <Card className="border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-            <CardContent className="pt-6">
-              <div className="mb-4 bg-brand-purple/10 w-12 h-12 rounded-lg flex items-center justify-center">
-                <Clock className="text-brand-purple h-6 w-6" />
-              </div>
-              <h3 className="text-xl font-bold mb-2">Largest Contentful Paint (LCP)</h3>
-              <p className="text-gray-600 mb-4">
-                Slow LCP frustrates users waiting for content to appear, leading to high bounce rates and lost revenue.
-              </p>
-              <div className="bg-red-50 p-4 rounded-lg mb-4">
-                <p className="text-red-600 text-sm font-medium">Impact on Business:</p>
-                <ul className="text-sm text-gray-700 list-disc list-inside mt-2 space-y-1">
-                  <li>25% increase in bounce rate</li>
-                  <li>18% decrease in conversions</li>
-                  <li>Lower search ranking position</li>
-                </ul>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-            <CardContent className="pt-6">
-              <div className="mb-4 bg-brand-purple/10 w-12 h-12 rounded-lg flex items-center justify-center">
-                <Zap className="text-brand-purple h-6 w-6" />
-              </div>
-              <h3 className="text-xl font-bold mb-2">First Input Delay (FID)</h3>
-              <p className="text-gray-600 mb-4">
-                Long input delays prevent user interactions, creating a frustrating experience that drives customers away.
-              </p>
-              <div className="bg-red-50 p-4 rounded-lg mb-4">
-                <p className="text-red-600 text-sm font-medium">Impact on Business:</p>
-                <ul className="text-sm text-gray-700 list-disc list-inside mt-2 space-y-1">
-                  <li>38% lower session duration</li>
-                  <li>23% fewer page views per session</li>
-                  <li>Higher customer acquisition costs</li>
-                </ul>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-            <CardContent className="pt-6">
-              <div className="mb-4 bg-brand-purple/10 w-12 h-12 rounded-lg flex items-center justify-center">
-                <BarChart className="text-brand-purple h-6 w-6" />
-              </div>
-              <h3 className="text-xl font-bold mb-2">Cumulative Layout Shift (CLS)</h3>
-              <p className="text-gray-600 mb-4">
-                Unexpected layout shifts cause misclicks and frustration, driving users away from your site.
-              </p>
-              <div className="bg-red-50 p-4 rounded-lg mb-4">
-                <p className="text-red-600 text-sm font-medium">Impact on Business:</p>
-                <ul className="text-sm text-gray-700 list-disc list-inside mt-2 space-y-1">
-                  <li>24% abandonment on checkout pages</li>
-                  <li>15% decrease in form submissions</li>
-                  <li>Damaged brand perception</li>
-                </ul>
-              </div>
-            </CardContent>
-          </Card>
+        {/* Problems Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+          {problems.map((problem, index) => (
+            <Card key={index} className="meta-card meta-interactive animate-meta-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+              <CardContent className="p-8">
+                {/* Icon */}
+                <div className={`bg-${problem.color}-50 text-${problem.color}-600 rounded-meta-lg w-12 h-12 flex items-center justify-center mb-6`}>
+                  {problem.icon}
+                </div>
+                
+                {/* Content */}
+                <h3 className="text-xl font-semibold mb-4 text-meta-gray-900">{problem.title}</h3>
+                <p className="text-meta-gray-600 mb-6 leading-relaxed">{problem.description}</p>
+                
+                {/* Impact List */}
+                <div className="bg-red-50 rounded-meta p-4">
+                  <p className="text-red-700 font-medium mb-3 text-sm">Business Impact:</p>
+                  <ul className="space-y-2">
+                    {problem.impacts.map((impact, idx) => (
+                      <li key={idx} className="text-sm text-meta-gray-700 flex items-start">
+                        <span className="text-red-500 mr-2 flex-shrink-0">•</span>
+                        {impact}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
 
-        <div className="mt-16 bg-white p-8 rounded-xl shadow-sm border border-gray-200">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        {/* Solution Section */}
+        <div className="meta-glass rounded-meta-xl p-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="text-2xl font-bold mb-4">How We <span className="gradient-text">Solve</span> These Problems</h3>
-              <p className="text-gray-600 mb-6">
-                Our comprehensive approach tackles all Core Web Vitals issues to maximize your site's performance, user experience, and conversions.
+              <h3 className="text-3xl font-semibold mb-6 text-meta-gray-900">
+                How We <span className="meta-gradient-text">Solve</span> These Problems
+              </h3>
+              <p className="text-xl text-meta-gray-600 mb-8 leading-relaxed">
+                Our systematic approach tackles all Core Web Vitals issues to maximize your site's performance, user experience, and conversions.
               </p>
-              <ul className="space-y-4">
-                <li className="flex items-start">
-                  <div className="bg-green-100 p-1 rounded-full mr-3 mt-0.5">
-                    <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
+              
+              {/* Solutions List */}
+              <div className="space-y-4">
+                {solutions.map((solution, index) => (
+                  <div key={index} className="flex items-start animate-meta-fade-in" style={{ animationDelay: `${index * 0.1 + 0.3}s` }}>
+                    <CheckCircle className="text-meta-green-500 mr-4 mt-0.5 h-5 w-5 flex-shrink-0" />
+                    <span className="text-meta-gray-700 font-medium">{solution}</span>
                   </div>
-                  <div>
-                    <span className="font-medium">Asset Optimization</span>
-                    <p className="text-sm text-gray-600">Compress images, optimize JavaScript, and minimize CSS to speed up loading times.</p>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <div className="bg-green-100 p-1 rounded-full mr-3 mt-0.5">
-                    <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <span className="font-medium">Code Splitting & Lazy Loading</span>
-                    <p className="text-sm text-gray-600">Load only what's needed, when it's needed to improve LCP and FID.</p>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <div className="bg-green-100 p-1 rounded-full mr-3 mt-0.5">
-                    <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <span className="font-medium">Layout Stabilization</span>
-                    <p className="text-sm text-gray-600">Reserve space for dynamic content to eliminate layout shifts.</p>
-                  </div>
-                </li>
-              </ul>
+                ))}
+              </div>
             </div>
-            <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-xl">
-              <div className="text-center">
-                <h4 className="text-xl font-bold mb-3">Average Improvements Our Clients See</h4>
-                <div className="grid grid-cols-3 gap-4 mt-6">
-                  <div className="bg-white p-4 rounded-lg shadow-sm">
-                    <div className="text-3xl font-bold text-brand-purple">52%</div>
-                    <p className="text-sm text-gray-600">Faster LCP</p>
-                  </div>
-                  <div className="bg-white p-4 rounded-lg shadow-sm">
-                    <div className="text-3xl font-bold text-brand-purple">68%</div>
-                    <p className="text-sm text-gray-600">Reduced CLS</p>
-                  </div>
-                  <div className="bg-white p-4 rounded-lg shadow-sm">
-                    <div className="text-3xl font-bold text-brand-purple">43%</div>
-                    <p className="text-sm text-gray-600">Better FID</p>
-                  </div>
+            
+            {/* Results Stats */}
+            <div className="bg-gradient-to-br from-meta-blue-50 to-meta-purple-50 rounded-meta-lg p-8">
+              <h4 className="text-2xl font-semibold mb-6 text-center text-meta-gray-900">
+                Average Client Improvements
+              </h4>
+              
+              <div className="grid grid-cols-2 gap-6 mb-8">
+                <div className="meta-stat">
+                  <div className="meta-stat-number text-3xl">52%</div>
+                  <div className="meta-stat-label">Faster LCP</div>
                 </div>
-                <div className="mt-6 bg-green-50 p-4 rounded-lg">
-                  <p className="text-green-800 font-medium">Business Impact</p>
-                  <div className="grid grid-cols-2 gap-4 mt-2">
-                    <div className="text-left">
-                      <div className="text-2xl font-bold text-green-600">+27%</div>
-                      <p className="text-xs text-gray-600">Conversion Rate</p>
-                    </div>
-                    <div className="text-left">
-                      <div className="text-2xl font-bold text-green-600">-32%</div>
-                      <p className="text-xs text-gray-600">Bounce Rate</p>
-                    </div>
+                <div className="meta-stat">
+                  <div className="meta-stat-number text-3xl">68%</div>
+                  <div className="meta-stat-label">Reduced CLS</div>
+                </div>
+                <div className="meta-stat">
+                  <div className="meta-stat-number text-3xl">43%</div>
+                  <div className="meta-stat-label">Better FID</div>
+                </div>
+                <div className="meta-stat">
+                  <div className="meta-stat-number text-3xl">94</div>
+                  <div className="meta-stat-label">Lighthouse Score</div>
+                </div>
+              </div>
+              
+              {/* Business Impact */}
+              <div className="bg-meta-green-50 rounded-meta p-6 border border-meta-green-200">
+                <h5 className="font-semibold text-meta-green-800 mb-4">Business Impact</h5>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-meta-green-600">+27%</div>
+                    <p className="text-sm text-meta-gray-600">Conversion Rate</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-meta-green-600">-32%</div>
+                    <p className="text-sm text-meta-gray-600">Bounce Rate</p>
                   </div>
                 </div>
               </div>

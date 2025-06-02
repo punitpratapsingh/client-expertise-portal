@@ -1,110 +1,139 @@
 
 import { Button } from "@/components/ui/button";
-import { ChevronRight, Zap, Shield, TrendingUp } from "lucide-react";
+import { ChevronRight, Zap, Shield, TrendingUp, ArrowRight, CheckCircle } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <div className="pt-28 pb-16 md:pt-36 md:pb-24 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 relative overflow-hidden">
-      {/* Background decorative elements */}
+    <div className="pt-24 pb-20 md:pt-32 md:pb-28 meta-hero-bg relative overflow-hidden">
+      {/* Subtle background decorations */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-indigo-400/20 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 right-20 w-72 h-72 bg-meta-blue-100/40 rounded-full blur-3xl animate-meta-float"></div>
+        <div className="absolute bottom-20 left-20 w-64 h-64 bg-meta-purple-100/30 rounded-full blur-3xl animate-meta-float" style={{ animationDelay: '1s' }}></div>
       </div>
       
-      <div className="container-custom relative">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="animate-fade-in-up">
-            <div className="inline-flex items-center px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full border border-white/30 mb-6">
-              <Shield className="w-4 h-4 text-blue-600 mr-2" />
-              <span className="text-sm font-medium text-gray-700">Trusted by 1000+ companies</span>
+      <div className="meta-container relative">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="animate-meta-fade-in">
+            {/* Trust Badge */}
+            <div className="meta-badge mb-8 animate-meta-scale">
+              <Shield className="w-4 h-4 mr-2" />
+              <span>Trusted by 1000+ companies worldwide</span>
             </div>
             
-            <h1 className="mb-6">
-              <span className="gradient-text">Accelerate</span> Your Web Performance
+            <h1 className="mb-8 meta-text-balance">
+              <span className="meta-gradient-text">Accelerate</span> Your Web Performance
             </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-lg leading-relaxed">
-              Boost revenue and retention by solving Core Web Vitals issues
-              that are slowing down your website and frustrating your users.
+            <p className="text-xl text-meta-gray-600 mb-10 max-w-lg leading-relaxed meta-text-balance">
+              Boost revenue and user retention by solving Core Web Vitals issues that slow down your website and frustrate your users.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-lg h-12 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                Get Free Audit
-                <ChevronRight className="ml-2 h-5 w-5" />
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+              <Button className="meta-button text-lg h-14 px-8 rounded-meta-lg shadow-meta-lg hover:shadow-meta-xl group">
+                Get Free Performance Audit
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button variant="outline" className="text-lg h-12 px-8 rounded-xl border-2 hover:bg-white/80 backdrop-blur-sm">
-                See Our Results
+              <Button variant="outline" className="meta-button-outline text-lg h-14 px-8 rounded-meta-lg">
+                View Success Stories
               </Button>
             </div>
             
-            <div className="flex items-center gap-6 text-sm">
-              <div className="flex items-center text-gray-600">
-                <Zap className="text-yellow-500 mr-2 h-5 w-5" />
-                <span>Lightning fast results</span>
+            {/* Key Benefits */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
+              <div className="flex items-center text-meta-gray-700">
+                <CheckCircle className="text-meta-green-500 mr-3 h-5 w-5 flex-shrink-0" />
+                <span className="font-medium">Lightning fast results in 2 weeks</span>
               </div>
-              <div className="flex items-center text-gray-600">
-                <TrendingUp className="text-green-500 mr-2 h-5 w-5" />
-                <span>+40% average improvement</span>
+              <div className="flex items-center text-meta-gray-700">
+                <CheckCircle className="text-meta-green-500 mr-3 h-5 w-5 flex-shrink-0" />
+                <span className="font-medium">Average 40% performance boost</span>
+              </div>
+              <div className="flex items-center text-meta-gray-700">
+                <CheckCircle className="text-meta-green-500 mr-3 h-5 w-5 flex-shrink-0" />
+                <span className="font-medium">27% increase in conversions</span>
+              </div>
+              <div className="flex items-center text-meta-gray-700">
+                <CheckCircle className="text-meta-green-500 mr-3 h-5 w-5 flex-shrink-0" />
+                <span className="font-medium">100% money-back guarantee</span>
               </div>
             </div>
           </div>
           
-          <div className="relative animate-fade-in-up animate-stagger-2">
-            <div className="glass-card rounded-3xl p-8 hover-lift">
-              <div className="flex justify-between items-center mb-6">
-                <div className="text-xl font-bold text-gray-800">Performance Dashboard</div>
+          {/* Performance Dashboard */}
+          <div className="relative animate-meta-fade-in meta-stagger-2">
+            <div className="meta-glass rounded-meta-xl p-8 meta-card-hover animate-meta-float">
+              {/* Dashboard Header */}
+              <div className="flex justify-between items-center mb-8">
+                <div className="text-xl font-semibold text-meta-gray-800">Performance Dashboard</div>
                 <div className="flex space-x-2">
-                  <div className="w-3 h-3 rounded-full bg-red-400"></div>
-                  <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-                  <div className="w-3 h-3 rounded-full bg-green-400"></div>
+                  <div className="w-3 h-3 rounded-full bg-meta-green-400"></div>
+                  <div className="w-3 h-3 rounded-full bg-meta-blue-400"></div>
+                  <div className="w-3 h-3 rounded-full bg-meta-purple-500"></div>
                 </div>
               </div>
               
+              {/* Key Metrics */}
               <div className="grid grid-cols-3 gap-6 mb-8">
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-green-600 mb-1">94</div>
-                  <div className="text-xs text-gray-500">Performance</div>
+                <div className="meta-stat">
+                  <div className="meta-stat-number">94</div>
+                  <div className="meta-stat-label">Performance Score</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-blue-600 mb-1">0.8s</div>
-                  <div className="text-xs text-gray-500">Load Time</div>
+                <div className="meta-stat">
+                  <div className="meta-stat-number">0.8s</div>
+                  <div className="meta-stat-label">Load Time</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-purple-600 mb-1">+118%</div>
-                  <div className="text-xs text-gray-500">Improvement</div>
+                <div className="meta-stat">
+                  <div className="meta-stat-number">+118%</div>
+                  <div className="meta-stat-label">Improvement</div>
                 </div>
               </div>
               
-              <div className="space-y-4">
-                <div className="bg-white/50 rounded-lg p-4">
-                  <div className="flex justify-between mb-2">
-                    <span className="text-sm font-medium text-gray-700">First Contentful Paint</span>
-                    <span className="text-sm font-bold text-green-600">0.8s</span>
+              {/* Core Web Vitals */}
+              <div className="space-y-6">
+                <div className="bg-white/60 rounded-meta p-4 border border-meta-gray-100">
+                  <div className="flex justify-between mb-3">
+                    <span className="text-sm font-medium text-meta-gray-700">First Contentful Paint</span>
+                    <span className="text-sm font-bold text-meta-green-500">0.8s</span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-gradient-to-r from-green-400 to-green-600 h-2 rounded-full" style={{ width: "90%" }}></div>
-                  </div>
-                </div>
-                
-                <div className="bg-white/50 rounded-lg p-4">
-                  <div className="flex justify-between mb-2">
-                    <span className="text-sm font-medium text-gray-700">Largest Contentful Paint</span>
-                    <span className="text-sm font-bold text-green-600">1.2s</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-gradient-to-r from-blue-400 to-blue-600 h-2 rounded-full" style={{ width: "85%" }}></div>
+                  <div className="w-full bg-meta-gray-200 rounded-full h-2">
+                    <div className="bg-gradient-to-r from-meta-green-400 to-meta-green-500 h-2 rounded-full transition-all duration-1000" style={{ width: "92%" }}></div>
                   </div>
                 </div>
                 
-                <div className="bg-white/50 rounded-lg p-4">
-                  <div className="flex justify-between mb-2">
-                    <span className="text-sm font-medium text-gray-700">Cumulative Layout Shift</span>
-                    <span className="text-sm font-bold text-green-600">0.01</span>
+                <div className="bg-white/60 rounded-meta p-4 border border-meta-gray-100">
+                  <div className="flex justify-between mb-3">
+                    <span className="text-sm font-medium text-meta-gray-700">Largest Contentful Paint</span>
+                    <span className="text-sm font-bold text-meta-blue-600">1.2s</span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-gradient-to-r from-purple-400 to-purple-600 h-2 rounded-full" style={{ width: "95%" }}></div>
+                  <div className="w-full bg-meta-gray-200 rounded-full h-2">
+                    <div className="bg-gradient-to-r from-meta-blue-400 to-meta-blue-500 h-2 rounded-full transition-all duration-1000" style={{ width: "88%" }}></div>
                   </div>
                 </div>
+                
+                <div className="bg-white/60 rounded-meta p-4 border border-meta-gray-100">
+                  <div className="flex justify-between mb-3">
+                    <span className="text-sm font-medium text-meta-gray-700">Cumulative Layout Shift</span>
+                    <span className="text-sm font-bold text-meta-purple-500">0.01</span>
+                  </div>
+                  <div className="w-full bg-meta-gray-200 rounded-full h-2">
+                    <div className="bg-gradient-to-r from-meta-purple-500 to-meta-purple-600 h-2 rounded-full transition-all duration-1000" style={{ width: "96%" }}></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Floating metrics */}
+            <div className="absolute -top-4 -right-4 meta-glass rounded-meta-lg p-4 animate-meta-float" style={{ animationDelay: '0.5s' }}>
+              <div className="flex items-center gap-2">
+                <TrendingUp className="h-5 w-5 text-meta-green-500" />
+                <span className="text-sm font-semibold text-meta-gray-700">+27% Revenue</span>
+              </div>
+            </div>
+            
+            <div className="absolute -bottom-4 -left-4 meta-glass rounded-meta-lg p-4 animate-meta-float" style={{ animationDelay: '1s' }}>
+              <div className="flex items-center gap-2">
+                <Zap className="h-5 w-5 text-meta-blue-500" />
+                <span className="text-sm font-semibold text-meta-gray-700">60% Faster</span>
               </div>
             </div>
           </div>

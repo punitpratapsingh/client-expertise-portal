@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { ChevronLeft, ChevronRight, Star, Quote } from "lucide-react";
+import { ChevronLeft, ChevronRight, Star, Quote, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const testimonials = [
@@ -80,38 +80,53 @@ const TestimonialsSection = () => {
         <Star
           key={i}
           className={`h-4 w-4 ${
-            i < rating ? "text-yellow-400 fill-yellow-400" : "text-gray-300"
+            i < rating ? "text-yellow-400 fill-yellow-400" : "text-meta-gray-300"
           }`}
         />
       ));
   };
 
   return (
-    <section id="testimonials" className="section-padding bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
-      <div className="container-custom">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="mb-6">Client <span className="gradient-text">Success Stories</span></h2>
-          <p className="text-lg text-gray-600 leading-relaxed">
-            Don't just take our word for it. Here's what our clients have to say about our web performance expertise.
+    <section id="testimonials" className="meta-section bg-meta-gray-50/30">
+      <div className="meta-container">
+        {/* Section Header */}
+        <div className="text-center max-w-4xl mx-auto mb-20">
+          <div className="meta-badge mb-6 animate-meta-scale">
+            <Users className="w-4 h-4 mr-2" />
+            <span>Client Success Stories</span>
+          </div>
+          <h2 className="mb-8 meta-text-balance">
+            Trusted by <span className="meta-gradient-text">Industry Leaders</span>
+          </h2>
+          <p className="text-xl text-meta-gray-600 leading-relaxed meta-text-balance">
+            Don't just take our word for it. Here's what our clients say about our web performance expertise.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {displayedTestimonials.map((testimonial) => (
-            <Card key={testimonial.id} className="interactive-card border-0 shadow-lg">
+        {/* Testimonials Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          {displayedTestimonials.map((testimonial, index) => (
+            <Card key={testimonial.id} className="meta-card meta-interactive border-0 group animate-meta-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
               <CardContent className="p-8">
+                {/* Header */}
                 <div className="flex justify-between items-start mb-6">
                   <div className="flex">{renderStars(testimonial.rating)}</div>
-                  <Quote className="h-8 w-8 text-blue-200" />
+                  <Quote className="h-6 w-6 text-meta-blue-200" />
                 </div>
-                <p className="text-gray-700 mb-8 min-h-[120px] leading-relaxed">{testimonial.content}</p>
+                
+                {/* Testimonial Content */}
+                <p className="text-meta-gray-700 mb-8 leading-relaxed min-h-[120px]">
+                  "{testimonial.content}"
+                </p>
+                
+                {/* Author */}
                 <div className="flex items-center">
-                  <div className="bg-gradient-to-br from-blue-500 to-indigo-500 text-white font-bold h-12 w-12 rounded-full flex items-center justify-center mr-4 shadow-lg">
+                  <div className="bg-gradient-to-br from-meta-blue-500 to-meta-purple-500 text-white font-semibold h-12 w-12 rounded-meta flex items-center justify-center mr-4 shadow-meta">
                     {testimonial.logo.substring(0, 2)}
                   </div>
                   <div>
-                    <p className="font-bold text-gray-800">{testimonial.author}</p>
-                    <p className="text-sm text-gray-600">{testimonial.position}</p>
+                    <p className="font-semibold text-meta-gray-900">{testimonial.author}</p>
+                    <p className="text-sm text-meta-gray-600">{testimonial.position}</p>
                   </div>
                 </div>
               </CardContent>
@@ -119,47 +134,61 @@ const TestimonialsSection = () => {
           ))}
         </div>
 
-        <div className="flex justify-center mt-12 space-x-2">
-          <Button variant="outline" size="icon" onClick={prevPage} className="rounded-full border-2 hover:bg-white/80">
+        {/* Navigation */}
+        <div className="flex justify-center mb-16 space-x-3">
+          <Button 
+            variant="outline" 
+            size="icon" 
+            onClick={prevPage} 
+            className="rounded-full border-meta-gray-300 hover:bg-meta-blue-50 hover:border-meta-blue-300"
+          >
             <ChevronLeft className="h-4 w-4" />
           </Button>
-          {Array(pageCount)
-            .fill(0)
-            .map((_, index) => (
-              <Button
-                key={index}
-                variant={currentPage === index ? "default" : "outline"}
-                size="icon"
-                onClick={() => setCurrentPage(index)}
-                className={`rounded-full border-2 ${currentPage === index ? "bg-gradient-to-r from-blue-600 to-indigo-600" : "hover:bg-white/80"}`}
-              >
-                {index + 1}
-              </Button>
-            ))}
-          <Button variant="outline" size="icon" onClick={nextPage} className="rounded-full border-2 hover:bg-white/80">
+          
+          {Array(pageCount).fill(0).map((_, index) => (
+            <Button
+              key={index}
+              variant={currentPage === index ? "default" : "outline"}
+              size="icon"
+              onClick={() => setCurrentPage(index)}
+              className={`rounded-full ${
+                currentPage === index 
+                  ? "bg-meta-blue-500 hover:bg-meta-blue-600 border-meta-blue-500" 
+                  : "border-meta-gray-300 hover:bg-meta-blue-50 hover:border-meta-blue-300"
+              }`}
+            >
+              {index + 1}
+            </Button>
+          ))}
+          
+          <Button 
+            variant="outline" 
+            size="icon" 
+            onClick={nextPage} 
+            className="rounded-full border-meta-gray-300 hover:bg-meta-blue-50 hover:border-meta-blue-300"
+          >
             <ChevronRight className="h-4 w-4" />
           </Button>
         </div>
 
-        <div className="mt-16">
-          <div className="glass-card rounded-3xl p-8 shadow-xl">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-              <div>
-                <h3 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-2">500+</h3>
-                <p className="text-gray-600">Websites Optimized</p>
-              </div>
-              <div>
-                <h3 className="text-4xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent mb-2">42%</h3>
-                <p className="text-gray-600">Average Speed Increase</p>
-              </div>
-              <div>
-                <h3 className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">27%</h3>
-                <p className="text-gray-600">Conversion Improvement</p>
-              </div>
-              <div>
-                <h3 className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-2">98%</h3>
-                <p className="text-gray-600">Client Satisfaction</p>
-              </div>
+        {/* Stats Section */}
+        <div className="meta-glass rounded-meta-xl p-12 shadow-meta-lg">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+            <div className="animate-meta-fade-in">
+              <div className="meta-stat-number">500+</div>
+              <div className="meta-stat-label">Websites Optimized</div>
+            </div>
+            <div className="animate-meta-fade-in meta-stagger-1">
+              <div className="meta-stat-number">42%</div>
+              <div className="meta-stat-label">Average Speed Increase</div>
+            </div>
+            <div className="animate-meta-fade-in meta-stagger-2">
+              <div className="meta-stat-number">27%</div>
+              <div className="meta-stat-label">Conversion Improvement</div>
+            </div>
+            <div className="animate-meta-fade-in meta-stagger-3">
+              <div className="meta-stat-number">98%</div>
+              <div className="meta-stat-label">Client Satisfaction</div>
             </div>
           </div>
         </div>
