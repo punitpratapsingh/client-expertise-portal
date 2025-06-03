@@ -1,7 +1,6 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { BarChart, Clock, Zap, TrendingUp, CheckCircle, AlertTriangle, Target, Award } from "lucide-react";
+import { BarChart, Clock, Zap, TrendingUp, CheckCircle, AlertTriangle, Target, Award, ArrowRight } from "lucide-react";
 
 const WebVitalsSection = () => {
   const problems = [
