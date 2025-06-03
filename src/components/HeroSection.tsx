@@ -1,139 +1,157 @@
 
 import { Button } from "@/components/ui/button";
-import { ChevronRight, Zap, Shield, TrendingUp, ArrowRight, CheckCircle } from "lucide-react";
+import { ChevronRight, Zap, Shield, TrendingUp, ArrowRight, CheckCircle, Cpu, Database, Gauge } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <div className="pt-24 pb-20 md:pt-32 md:pb-28 meta-hero-bg relative overflow-hidden">
-      {/* Subtle background decorations */}
+    <div className="pt-24 pb-20 md:pt-32 md:pb-28 relative overflow-hidden">
+      {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 right-20 w-72 h-72 bg-meta-blue-100/40 rounded-full blur-3xl animate-meta-float"></div>
-        <div className="absolute bottom-20 left-20 w-64 h-64 bg-meta-purple-100/30 rounded-full blur-3xl animate-meta-float" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-20 right-20 w-96 h-96 bg-neon-blue/20 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 left-20 w-80 h-80 bg-glow-purple/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-neon-green/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
+        
+        {/* Grid pattern overlay */}
+        <div className="absolute inset-0 grid-pattern opacity-30"></div>
+        
+        {/* Data streams */}
+        <div className="absolute left-10 top-0 w-0.5 h-full bg-gradient-to-b from-transparent via-neon-cyan to-transparent opacity-20 animate-data-stream"></div>
+        <div className="absolute right-20 top-0 w-0.5 h-full bg-gradient-to-b from-transparent via-neon-blue to-transparent opacity-20 animate-data-stream" style={{ animationDelay: '3s' }}></div>
       </div>
       
-      <div className="meta-container relative">
+      <div className="cyber-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="animate-meta-fade-in">
-            {/* Trust Badge */}
-            <div className="meta-badge mb-8 animate-meta-scale">
+          <div className="animate-slide-up">
+            {/* Cyber Badge */}
+            <div className="cyber-badge mb-8 animate-neon-pulse">
               <Shield className="w-4 h-4 mr-2" />
-              <span>Trusted by 1000+ companies worldwide</span>
+              <span>Trusted by 1000+ enterprises globally</span>
             </div>
             
-            <h1 className="mb-8 meta-text-balance">
-              <span className="meta-gradient-text">Accelerate</span> Your Web Performance
+            <h1 className="mb-8 text-balance">
+              <span className="cyber-text-glow">Quantum</span> Web Performance
             </h1>
-            <p className="text-xl text-meta-gray-600 mb-10 max-w-lg leading-relaxed meta-text-balance">
-              Boost revenue and user retention by solving Core Web Vitals issues that slow down your website and frustrate your users.
+            <p className="text-xl text-dark-200 mb-10 max-w-lg leading-relaxed">
+              Leverage advanced algorithms and next-gen optimization techniques to eliminate Core Web Vitals bottlenecks and maximize revenue conversion.
             </p>
             
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Button className="meta-button text-lg h-14 px-8 rounded-meta-lg shadow-meta-lg hover:shadow-meta-xl group">
-                Get Free Performance Audit
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            <div className="flex flex-col sm:flex-row gap-6 mb-12">
+              <Button className="cyber-button text-lg h-14 px-8 rounded-xl group relative overflow-hidden">
+                <span className="relative z-10">Initialize Performance Scan</span>
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform relative z-10" />
+                <div className="absolute inset-0 bg-gradient-to-r from-neon-cyan to-glow-purple opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Button>
-              <Button variant="outline" className="meta-button-outline text-lg h-14 px-8 rounded-meta-lg">
-                View Success Stories
+              <Button className="cyber-button-outline text-lg h-14 px-8 rounded-xl">
+                View Case Studies
               </Button>
             </div>
             
             {/* Key Benefits */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
-              <div className="flex items-center text-meta-gray-700">
-                <CheckCircle className="text-meta-green-500 mr-3 h-5 w-5 flex-shrink-0" />
-                <span className="font-medium">Lightning fast results in 2 weeks</span>
+              <div className="flex items-center text-dark-200">
+                <CheckCircle className="text-neon-green mr-3 h-5 w-5 flex-shrink-0" />
+                <span className="font-medium">Deploy in 48 hours</span>
               </div>
-              <div className="flex items-center text-meta-gray-700">
-                <CheckCircle className="text-meta-green-500 mr-3 h-5 w-5 flex-shrink-0" />
-                <span className="font-medium">Average 40% performance boost</span>
+              <div className="flex items-center text-dark-200">
+                <CheckCircle className="text-neon-green mr-3 h-5 w-5 flex-shrink-0" />
+                <span className="font-medium">60% performance boost</span>
               </div>
-              <div className="flex items-center text-meta-gray-700">
-                <CheckCircle className="text-meta-green-500 mr-3 h-5 w-5 flex-shrink-0" />
-                <span className="font-medium">27% increase in conversions</span>
+              <div className="flex items-center text-dark-200">
+                <CheckCircle className="text-neon-green mr-3 h-5 w-5 flex-shrink-0" />
+                <span className="font-medium">AI-powered optimization</span>
               </div>
-              <div className="flex items-center text-meta-gray-700">
-                <CheckCircle className="text-meta-green-500 mr-3 h-5 w-5 flex-shrink-0" />
-                <span className="font-medium">100% money-back guarantee</span>
+              <div className="flex items-center text-dark-200">
+                <CheckCircle className="text-neon-green mr-3 h-5 w-5 flex-shrink-0" />
+                <span className="font-medium">Zero downtime guarantee</span>
               </div>
             </div>
           </div>
           
-          {/* Performance Dashboard */}
-          <div className="relative animate-meta-fade-in meta-stagger-2">
-            <div className="meta-glass rounded-meta-xl p-8 meta-card-hover animate-meta-float">
+          {/* Cyber Performance Dashboard */}
+          <div className="relative animate-slide-up perspective-1000" style={{ animationDelay: '0.3s' }}>
+            <div className="cyber-glass rounded-3xl p-8 cyber-card-hover animate-cyber-float neon-border">
               {/* Dashboard Header */}
               <div className="flex justify-between items-center mb-8">
-                <div className="text-xl font-semibold text-meta-gray-800">Performance Dashboard</div>
+                <div className="text-xl font-semibold text-neon-cyan cyber-text-glow">Neural Performance Core</div>
                 <div className="flex space-x-2">
-                  <div className="w-3 h-3 rounded-full bg-meta-green-400"></div>
-                  <div className="w-3 h-3 rounded-full bg-meta-blue-400"></div>
-                  <div className="w-3 h-3 rounded-full bg-meta-purple-500"></div>
+                  <div className="w-3 h-3 rounded-full bg-neon-green animate-glow"></div>
+                  <div className="w-3 h-3 rounded-full bg-neon-blue animate-glow" style={{ animationDelay: '0.5s' }}></div>
+                  <div className="w-3 h-3 rounded-full bg-glow-purple animate-glow" style={{ animationDelay: '1s' }}></div>
                 </div>
               </div>
               
-              {/* Key Metrics */}
+              {/* System Stats */}
               <div className="grid grid-cols-3 gap-6 mb-8">
-                <div className="meta-stat">
-                  <div className="meta-stat-number">94</div>
-                  <div className="meta-stat-label">Performance Score</div>
+                <div className="cyber-stat">
+                  <div className="cyber-stat-number">98</div>
+                  <div className="cyber-stat-label">Core Score</div>
                 </div>
-                <div className="meta-stat">
-                  <div className="meta-stat-number">0.8s</div>
-                  <div className="meta-stat-label">Load Time</div>
+                <div className="cyber-stat">
+                  <div className="cyber-stat-number">0.4s</div>
+                  <div className="cyber-stat-label">Load Time</div>
                 </div>
-                <div className="meta-stat">
-                  <div className="meta-stat-number">+118%</div>
-                  <div className="meta-stat-label">Improvement</div>
+                <div className="cyber-stat">
+                  <div className="cyber-stat-number">+247%</div>
+                  <div className="cyber-stat-label">Efficiency</div>
                 </div>
               </div>
               
-              {/* Core Web Vitals */}
+              {/* Performance Metrics */}
               <div className="space-y-6">
-                <div className="bg-white/60 rounded-meta p-4 border border-meta-gray-100">
+                <div className="hologram-effect rounded-xl p-4">
                   <div className="flex justify-between mb-3">
-                    <span className="text-sm font-medium text-meta-gray-700">First Contentful Paint</span>
-                    <span className="text-sm font-bold text-meta-green-500">0.8s</span>
+                    <div className="flex items-center">
+                      <Cpu className="w-4 h-4 text-neon-blue mr-2" />
+                      <span className="text-sm font-medium text-dark-200">Processing Speed</span>
+                    </div>
+                    <span className="text-sm font-bold text-neon-blue cyber-text-glow">0.8ms</span>
                   </div>
-                  <div className="w-full bg-meta-gray-200 rounded-full h-2">
-                    <div className="bg-gradient-to-r from-meta-green-400 to-meta-green-500 h-2 rounded-full transition-all duration-1000" style={{ width: "92%" }}></div>
+                  <div className="w-full bg-dark-700 rounded-full h-2">
+                    <div className="bg-gradient-to-r from-neon-blue to-neon-cyan h-2 rounded-full transition-all duration-1000 shadow-neon-sm" style={{ width: "94%" }}></div>
                   </div>
                 </div>
                 
-                <div className="bg-white/60 rounded-meta p-4 border border-meta-gray-100">
+                <div className="hologram-effect rounded-xl p-4">
                   <div className="flex justify-between mb-3">
-                    <span className="text-sm font-medium text-meta-gray-700">Largest Contentful Paint</span>
-                    <span className="text-sm font-bold text-meta-blue-600">1.2s</span>
+                    <div className="flex items-center">
+                      <Database className="w-4 h-4 text-glow-purple mr-2" />
+                      <span className="text-sm font-medium text-dark-200">Data Transfer</span>
+                    </div>
+                    <span className="text-sm font-bold text-glow-purple cyber-text-glow">1.2TB/s</span>
                   </div>
-                  <div className="w-full bg-meta-gray-200 rounded-full h-2">
-                    <div className="bg-gradient-to-r from-meta-blue-400 to-meta-blue-500 h-2 rounded-full transition-all duration-1000" style={{ width: "88%" }}></div>
+                  <div className="w-full bg-dark-700 rounded-full h-2">
+                    <div className="bg-gradient-to-r from-glow-purple to-neon-pink h-2 rounded-full transition-all duration-1000 shadow-glow-purple" style={{ width: "89%" }}></div>
                   </div>
                 </div>
                 
-                <div className="bg-white/60 rounded-meta p-4 border border-meta-gray-100">
+                <div className="hologram-effect rounded-xl p-4">
                   <div className="flex justify-between mb-3">
-                    <span className="text-sm font-medium text-meta-gray-700">Cumulative Layout Shift</span>
-                    <span className="text-sm font-bold text-meta-purple-500">0.01</span>
+                    <div className="flex items-center">
+                      <Gauge className="w-4 h-4 text-neon-green mr-2" />
+                      <span className="text-sm font-medium text-dark-200">System Load</span>
+                    </div>
+                    <span className="text-sm font-bold text-neon-green cyber-text-glow">0.02%</span>
                   </div>
-                  <div className="w-full bg-meta-gray-200 rounded-full h-2">
-                    <div className="bg-gradient-to-r from-meta-purple-500 to-meta-purple-600 h-2 rounded-full transition-all duration-1000" style={{ width: "96%" }}></div>
+                  <div className="w-full bg-dark-700 rounded-full h-2">
+                    <div className="bg-gradient-to-r from-neon-green to-neon-yellow h-2 rounded-full transition-all duration-1000 shadow-glow-green" style={{ width: "97%" }}></div>
                   </div>
                 </div>
               </div>
             </div>
             
             {/* Floating metrics */}
-            <div className="absolute -top-4 -right-4 meta-glass rounded-meta-lg p-4 animate-meta-float" style={{ animationDelay: '0.5s' }}>
+            <div className="absolute -top-4 -right-4 cyber-glass rounded-xl p-4 animate-cyber-float neon-border" style={{ animationDelay: '1s' }}>
               <div className="flex items-center gap-2">
-                <TrendingUp className="h-5 w-5 text-meta-green-500" />
-                <span className="text-sm font-semibold text-meta-gray-700">+27% Revenue</span>
+                <TrendingUp className="h-5 w-5 text-neon-green" />
+                <span className="text-sm font-semibold text-neon-green cyber-text-glow">+387% ROI</span>
               </div>
             </div>
             
-            <div className="absolute -bottom-4 -left-4 meta-glass rounded-meta-lg p-4 animate-meta-float" style={{ animationDelay: '1s' }}>
+            <div className="absolute -bottom-4 -left-4 cyber-glass rounded-xl p-4 animate-cyber-float neon-border" style={{ animationDelay: '2s' }}>
               <div className="flex items-center gap-2">
-                <Zap className="h-5 w-5 text-meta-blue-500" />
-                <span className="text-sm font-semibold text-meta-gray-700">60% Faster</span>
+                <Zap className="h-5 w-5 text-neon-blue" />
+                <span className="text-sm font-semibold text-neon-blue cyber-text-glow">Quantum Speed</span>
               </div>
             </div>
           </div>
