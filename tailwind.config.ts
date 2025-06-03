@@ -53,32 +53,54 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-        // Sci-Fi Dark/Light Professional Theme
-        'dark': {
-          900: '#0A0B0D', // Deep space black
-          800: '#13151A', // Dark charcoal
-          700: '#1A1D23', // Gunmetal
-          600: '#252A34', // Steel gray
-          500: '#374151', // Slate
-          400: '#4B5563', // Cool gray
-          300: '#6B7280', // Medium gray
-          200: '#9CA3AF', // Light gray
-          100: '#D1D5DB', // Very light gray
-          50: '#F9FAFB'   // Off white
+        // Modern Light Professional Theme
+        'light': {
+          50: '#F8FAFC',   // Very light gray
+          100: '#F1F5F9',  // Light gray
+          200: '#E2E8F0',  // Light gray
+          300: '#CBD5E1',  // Medium gray
+          400: '#94A3B8',  // Slate gray
+          500: '#64748B',  // Dark slate
+          600: '#475569',  // Darker slate
+          700: '#334155',  // Very dark slate
+          800: '#1E293B',  // Near black
+          900: '#0F172A'   // Almost black
         },
-        'neon': {
-          blue: '#00D4FF',    // Electric blue
-          cyan: '#00FFF0',    // Bright cyan
-          purple: '#8B5CF6',  // Electric purple
-          pink: '#FF0080',    // Hot pink
-          green: '#00FF88',   // Matrix green
-          yellow: '#FFD700'   // Electric yellow
+        'blue': {
+          50: '#EFF6FF',
+          100: '#DBEAFE',
+          200: '#BFDBFE',
+          300: '#93C5FD',
+          400: '#60A5FA',
+          500: '#3B82F6',  // Main blue
+          600: '#2563EB',
+          700: '#1D4ED8',
+          800: '#1E40AF',
+          900: '#1E3A8A'
         },
-        'glow': {
-          blue: '#0EA5E9',
-          purple: '#8B5CF6',
-          green: '#10B981',
-          orange: '#F59E0B'
+        'purple': {
+          50: '#FAF5FF',
+          100: '#F3E8FF',
+          200: '#E9D5FF',
+          300: '#D8B4FE',
+          400: '#C084FC',
+          500: '#A855F7',
+          600: '#9333EA',  // Main purple
+          700: '#7C3AED',
+          800: '#6D28D9',
+          900: '#581C87'
+        },
+        'emerald': {
+          50: '#ECFDF5',
+          100: '#D1FAE5',
+          200: '#A7F3D0',
+          300: '#6EE7B7',
+          400: '#34D399',
+          500: '#10B981',  // Main green
+          600: '#059669',
+          700: '#047857',
+          800: '#065F46',
+          900: '#064E3B'
         }
 			},
 			borderRadius: {
@@ -95,13 +117,13 @@ export default {
         'body': ['Inter', 'system-ui', 'sans-serif']
       },
 			boxShadow: {
-        'neon-sm': '0 0 5px rgba(0, 212, 255, 0.3)',
-        'neon': '0 0 20px rgba(0, 212, 255, 0.4)',
-        'neon-lg': '0 0 40px rgba(0, 212, 255, 0.3)',
-        'glow-purple': '0 0 20px rgba(139, 92, 246, 0.4)',
-        'glow-green': '0 0 20px rgba(16, 185, 129, 0.4)',
-        'cyber': '0 8px 32px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.05)',
-        'glass': '0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1)'
+        'modern-sm': '0 1px 3px rgba(59, 130, 246, 0.1)',
+        'modern': '0 4px 20px rgba(59, 130, 246, 0.15)',
+        'modern-lg': '0 8px 40px rgba(59, 130, 246, 0.2)',
+        'purple-glow': '0 4px 20px rgba(139, 92, 246, 0.15)',
+        'green-glow': '0 4px 20px rgba(16, 185, 129, 0.15)',
+        'soft': '0 4px 20px rgba(0, 0, 0, 0.08)',
+        'glass': '0 8px 32px rgba(0, 0, 0, 0.1)'
       },
 			keyframes: {
 				'accordion-down': {
@@ -120,12 +142,12 @@ export default {
 						height: '0'
 					}
 				},
-        'neon-pulse': {
+        'modern-pulse': {
           '0%, 100%': {
-            boxShadow: '0 0 5px rgba(0, 212, 255, 0.5), 0 0 20px rgba(0, 212, 255, 0.3)'
+            boxShadow: '0 0 5px rgba(59, 130, 246, 0.3), 0 0 20px rgba(59, 130, 246, 0.1)'
           },
           '50%': {
-            boxShadow: '0 0 10px rgba(0, 212, 255, 0.8), 0 0 40px rgba(0, 212, 255, 0.5)'
+            boxShadow: '0 0 10px rgba(59, 130, 246, 0.5), 0 0 40px rgba(59, 130, 246, 0.2)'
           }
         },
         'float': {
@@ -158,7 +180,7 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-        'neon-pulse': 'neon-pulse 2s ease-in-out infinite',
+        'modern-pulse': 'modern-pulse 2s ease-in-out infinite',
         'float': 'float 6s ease-in-out infinite',
         'slide-up': 'slide-up 0.6s ease-out',
         'glow': 'glow 2s ease-in-out infinite'
