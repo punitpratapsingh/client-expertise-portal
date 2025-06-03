@@ -1,163 +1,155 @@
 
 import { Button } from "@/components/ui/button";
-import { ChevronRight, Zap, Shield, TrendingUp, ArrowRight, CheckCircle, Cpu, Database, Gauge } from "lucide-react";
+import { ChevronRight, Zap, Shield, TrendingUp, ArrowRight, CheckCircle, Cpu, Database, Gauge, Play } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <div className="pt-24 pb-20 md:pt-32 md:pb-28 relative overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 right-20 w-96 h-96 bg-neon-blue/20 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 left-20 w-80 h-80 bg-glow-purple/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-neon-green/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
-        
-        {/* Grid pattern overlay */}
-        <div className="absolute inset-0 grid-pattern opacity-30"></div>
-        
-        {/* Data streams */}
-        <div className="absolute left-10 top-0 w-0.5 h-full bg-gradient-to-b from-transparent via-neon-cyan to-transparent opacity-20 animate-data-stream"></div>
-        <div className="absolute right-20 top-0 w-0.5 h-full bg-gradient-to-b from-transparent via-neon-blue to-transparent opacity-20 animate-data-stream" style={{ animationDelay: '3s' }}></div>
+    <section className="pt-32 pb-24 relative overflow-hidden bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900">
+      {/* Professional background elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 right-20 w-96 h-96 bg-neon-blue/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 left-20 w-80 h-80 bg-glow-purple/10 rounded-full blur-3xl"></div>
+        <div className="grid-pattern absolute inset-0 opacity-5"></div>
       </div>
       
-      <div className="cyber-container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="animate-slide-up">
-            {/* Cyber Badge */}
-            <div className="cyber-badge mb-8 animate-neon-pulse">
-              <Shield className="w-4 h-4 mr-2" />
-              <span>Trusted by 1000+ enterprises globally</span>
+      <div className="cyber-container relative z-10">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            {/* Trust Badge */}
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-dark-800/60 border border-neon-cyan/20 mb-8 backdrop-blur-sm">
+              <Shield className="w-4 h-4 mr-2 text-neon-cyan" />
+              <span className="text-sm font-medium text-dark-200">Trusted by 1000+ enterprises globally</span>
             </div>
             
-            <h1 className="mb-8 text-balance">
-              <span className="cyber-text-glow">Quantum</span> Web Performance
+            {/* Main Headline */}
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-8 leading-none">
+              <span className="text-dark-100">Performance</span>
+              <br />
+              <span className="cyber-gradient-text">Optimization</span>
             </h1>
-            <p className="text-xl text-dark-200 mb-10 max-w-lg leading-relaxed">
-              Leverage advanced algorithms and next-gen optimization techniques to eliminate Core Web Vitals bottlenecks and maximize revenue conversion.
+            
+            {/* Subheading */}
+            <p className="text-xl md:text-2xl text-dark-300 mb-12 max-w-4xl mx-auto leading-relaxed">
+              Enterprise-grade web performance solutions that accelerate load times, 
+              boost conversions, and maximize revenue through advanced optimization techniques.
             </p>
             
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 mb-12">
-              <Button className="cyber-button text-lg h-14 px-8 rounded-xl group relative overflow-hidden">
-                <span className="relative z-10">Initialize Performance Scan</span>
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform relative z-10" />
-                <div className="absolute inset-0 bg-gradient-to-r from-neon-cyan to-glow-purple opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            {/* CTA Section */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+              <Button className="cyber-button text-lg h-16 px-12 rounded-xl group relative overflow-hidden shadow-neon-lg">
+                <span className="relative z-10 flex items-center">
+                  Start Free Analysis
+                  <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </span>
               </Button>
-              <Button className="cyber-button-outline text-lg h-14 px-8 rounded-xl">
-                View Case Studies
+              <Button variant="outline" className="text-lg h-16 px-12 rounded-xl border-2 border-neon-cyan/30 text-neon-cyan hover:bg-neon-cyan/10 bg-transparent backdrop-blur-sm">
+                <Play className="mr-3 h-5 w-5" />
+                Watch Demo
               </Button>
             </div>
             
-            {/* Key Benefits */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
-              <div className="flex items-center text-dark-200">
-                <CheckCircle className="text-neon-green mr-3 h-5 w-5 flex-shrink-0" />
-                <span className="font-medium">Deploy in 48 hours</span>
+            {/* Key Benefits Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-neon-cyan mb-2">60%</div>
+                <div className="text-sm text-dark-300 font-medium">Faster Load Times</div>
               </div>
-              <div className="flex items-center text-dark-200">
-                <CheckCircle className="text-neon-green mr-3 h-5 w-5 flex-shrink-0" />
-                <span className="font-medium">60% performance boost</span>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-neon-green mb-2">+40%</div>
+                <div className="text-sm text-dark-300 font-medium">Conversion Rate</div>
               </div>
-              <div className="flex items-center text-dark-200">
-                <CheckCircle className="text-neon-green mr-3 h-5 w-5 flex-shrink-0" />
-                <span className="font-medium">AI-powered optimization</span>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-glow-purple mb-2">48h</div>
+                <div className="text-sm text-dark-300 font-medium">Implementation</div>
               </div>
-              <div className="flex items-center text-dark-200">
-                <CheckCircle className="text-neon-green mr-3 h-5 w-5 flex-shrink-0" />
-                <span className="font-medium">Zero downtime guarantee</span>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-neon-yellow mb-2">24/7</div>
+                <div className="text-sm text-dark-300 font-medium">Monitoring</div>
               </div>
             </div>
           </div>
           
-          {/* Cyber Performance Dashboard */}
-          <div className="relative animate-slide-up perspective-1000" style={{ animationDelay: '0.3s' }}>
-            <div className="cyber-glass rounded-3xl p-8 cyber-card-hover animate-cyber-float neon-border">
+          {/* Performance Dashboard Mockup */}
+          <div className="max-w-5xl mx-auto">
+            <div className="cyber-glass rounded-2xl p-8 backdrop-blur-lg border border-dark-600/30 shadow-2xl">
               {/* Dashboard Header */}
               <div className="flex justify-between items-center mb-8">
-                <div className="text-xl font-semibold text-neon-cyan cyber-text-glow">Neural Performance Core</div>
+                <div>
+                  <h3 className="text-2xl font-semibold text-dark-100 mb-2">Performetix Dashboard</h3>
+                  <p className="text-dark-400">Real-time performance analytics</p>
+                </div>
                 <div className="flex space-x-2">
-                  <div className="w-3 h-3 rounded-full bg-neon-green animate-glow"></div>
-                  <div className="w-3 h-3 rounded-full bg-neon-blue animate-glow" style={{ animationDelay: '0.5s' }}></div>
-                  <div className="w-3 h-3 rounded-full bg-glow-purple animate-glow" style={{ animationDelay: '1s' }}></div>
+                  <div className="w-3 h-3 rounded-full bg-neon-green animate-pulse"></div>
+                  <div className="w-3 h-3 rounded-full bg-neon-blue animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                  <div className="w-3 h-3 rounded-full bg-glow-purple animate-pulse" style={{ animationDelay: '1s' }}></div>
                 </div>
               </div>
               
-              {/* System Stats */}
-              <div className="grid grid-cols-3 gap-6 mb-8">
-                <div className="cyber-stat">
-                  <div className="cyber-stat-number">98</div>
-                  <div className="cyber-stat-label">Core Score</div>
+              {/* Core Web Vitals */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div className="text-center p-6 rounded-xl bg-dark-800/50 border border-neon-green/20">
+                  <div className="text-4xl font-bold text-neon-green mb-2">98</div>
+                  <div className="text-dark-300 text-sm font-medium">Performance Score</div>
+                  <div className="text-xs text-dark-400 mt-1">Core Web Vitals</div>
                 </div>
-                <div className="cyber-stat">
-                  <div className="cyber-stat-number">0.4s</div>
-                  <div className="cyber-stat-label">Load Time</div>
+                <div className="text-center p-6 rounded-xl bg-dark-800/50 border border-neon-blue/20">
+                  <div className="text-4xl font-bold text-neon-blue mb-2">0.8s</div>
+                  <div className="text-dark-300 text-sm font-medium">Load Time</div>
+                  <div className="text-xs text-dark-400 mt-1">Largest Contentful Paint</div>
                 </div>
-                <div className="cyber-stat">
-                  <div className="cyber-stat-number">+247%</div>
-                  <div className="cyber-stat-label">Efficiency</div>
+                <div className="text-center p-6 rounded-xl bg-dark-800/50 border border-glow-purple/20">
+                  <div className="text-4xl font-bold text-glow-purple mb-2">+287%</div>
+                  <div className="text-dark-300 text-sm font-medium">Revenue Impact</div>
+                  <div className="text-xs text-dark-400 mt-1">Conversion Improvement</div>
                 </div>
               </div>
               
               {/* Performance Metrics */}
-              <div className="space-y-6">
-                <div className="hologram-effect rounded-xl p-4">
-                  <div className="flex justify-between mb-3">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="bg-dark-800/30 rounded-xl p-6 border border-dark-600/30">
+                  <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center">
-                      <Cpu className="w-4 h-4 text-neon-blue mr-2" />
-                      <span className="text-sm font-medium text-dark-200">Processing Speed</span>
+                      <Cpu className="w-5 h-5 text-neon-blue mr-3" />
+                      <span className="text-sm font-medium text-dark-200">CPU Usage</span>
                     </div>
-                    <span className="text-sm font-bold text-neon-blue cyber-text-glow">0.8ms</span>
+                    <span className="text-sm font-bold text-neon-blue">12%</span>
                   </div>
                   <div className="w-full bg-dark-700 rounded-full h-2">
-                    <div className="bg-gradient-to-r from-neon-blue to-neon-cyan h-2 rounded-full transition-all duration-1000 shadow-neon-sm" style={{ width: "94%" }}></div>
+                    <div className="bg-gradient-to-r from-neon-blue to-neon-cyan h-2 rounded-full" style={{ width: "12%" }}></div>
                   </div>
                 </div>
                 
-                <div className="hologram-effect rounded-xl p-4">
-                  <div className="flex justify-between mb-3">
+                <div className="bg-dark-800/30 rounded-xl p-6 border border-dark-600/30">
+                  <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center">
-                      <Database className="w-4 h-4 text-glow-purple mr-2" />
-                      <span className="text-sm font-medium text-dark-200">Data Transfer</span>
+                      <Database className="w-5 h-5 text-glow-purple mr-3" />
+                      <span className="text-sm font-medium text-dark-200">Memory</span>
                     </div>
-                    <span className="text-sm font-bold text-glow-purple cyber-text-glow">1.2TB/s</span>
+                    <span className="text-sm font-bold text-glow-purple">68%</span>
                   </div>
                   <div className="w-full bg-dark-700 rounded-full h-2">
-                    <div className="bg-gradient-to-r from-glow-purple to-neon-pink h-2 rounded-full transition-all duration-1000 shadow-glow-purple" style={{ width: "89%" }}></div>
+                    <div className="bg-gradient-to-r from-glow-purple to-neon-pink h-2 rounded-full" style={{ width: "68%" }}></div>
                   </div>
                 </div>
                 
-                <div className="hologram-effect rounded-xl p-4">
-                  <div className="flex justify-between mb-3">
+                <div className="bg-dark-800/30 rounded-xl p-6 border border-dark-600/30">
+                  <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center">
-                      <Gauge className="w-4 h-4 text-neon-green mr-2" />
-                      <span className="text-sm font-medium text-dark-200">System Load</span>
+                      <Gauge className="w-5 h-5 text-neon-green mr-3" />
+                      <span className="text-sm font-medium text-dark-200">Network</span>
                     </div>
-                    <span className="text-sm font-bold text-neon-green cyber-text-glow">0.02%</span>
+                    <span className="text-sm font-bold text-neon-green">94%</span>
                   </div>
                   <div className="w-full bg-dark-700 rounded-full h-2">
-                    <div className="bg-gradient-to-r from-neon-green to-neon-yellow h-2 rounded-full transition-all duration-1000 shadow-glow-green" style={{ width: "97%" }}></div>
+                    <div className="bg-gradient-to-r from-neon-green to-neon-yellow h-2 rounded-full" style={{ width: "94%" }}></div>
                   </div>
                 </div>
-              </div>
-            </div>
-            
-            {/* Floating metrics */}
-            <div className="absolute -top-4 -right-4 cyber-glass rounded-xl p-4 animate-cyber-float neon-border" style={{ animationDelay: '1s' }}>
-              <div className="flex items-center gap-2">
-                <TrendingUp className="h-5 w-5 text-neon-green" />
-                <span className="text-sm font-semibold text-neon-green cyber-text-glow">+387% ROI</span>
-              </div>
-            </div>
-            
-            <div className="absolute -bottom-4 -left-4 cyber-glass rounded-xl p-4 animate-cyber-float neon-border" style={{ animationDelay: '2s' }}>
-              <div className="flex items-center gap-2">
-                <Zap className="h-5 w-5 text-neon-blue" />
-                <span className="text-sm font-semibold text-neon-blue cyber-text-glow">Quantum Speed</span>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
