@@ -70,40 +70,40 @@ const ServicesSection = () => {
 
   const getColorClasses = (color: string) => {
     const colorMap: Record<string, any> = {
-      blue: { text: "text-blue-400", border: "border-blue-500/30", bg: "bg-blue-500/10" },
-      purple: { text: "text-purple-400", border: "border-purple-500/30", bg: "bg-purple-500/10" },
-      green: { text: "text-emerald-400", border: "border-emerald-500/30", bg: "bg-emerald-500/10" },
-      cyan: { text: "text-cyan-400", border: "border-cyan-500/30", bg: "bg-cyan-500/10" },
-      orange: { text: "text-orange-400", border: "border-orange-500/30", bg: "bg-orange-500/10" },
-      red: { text: "text-red-400", border: "border-red-500/30", bg: "bg-red-500/10" }
+      blue: { text: "text-blue-600", border: "border-blue-300", bg: "bg-blue-50" },
+      purple: { text: "text-purple-600", border: "border-purple-300", bg: "bg-purple-50" },
+      green: { text: "text-emerald-600", border: "border-emerald-300", bg: "bg-emerald-50" },
+      cyan: { text: "text-cyan-600", border: "border-cyan-300", bg: "bg-cyan-50" },
+      orange: { text: "text-orange-600", border: "border-orange-300", bg: "bg-orange-50" },
+      red: { text: "text-red-600", border: "border-red-300", bg: "bg-red-50" }
     };
     return colorMap[color] || colorMap.blue;
   };
 
   return (
-    <section id="services" className="py-24 bg-zinc-900 relative">
+    <section id="services" className="py-24 bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 relative">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="grid-pattern-dark absolute inset-0 opacity-10"></div>
-        <div className="absolute top-1/4 left-10 w-2 h-32 bg-gradient-to-b from-transparent via-cyan-400/20 to-transparent"></div>
-        <div className="absolute top-1/3 right-20 w-2 h-40 bg-gradient-to-b from-transparent via-purple-400/20 to-transparent"></div>
+        <div className="grid-pattern-light absolute inset-0 opacity-20"></div>
+        <div className="absolute top-1/4 left-10 w-2 h-32 bg-gradient-to-b from-transparent via-cyan-400/30 to-transparent"></div>
+        <div className="absolute top-1/3 right-20 w-2 h-40 bg-gradient-to-b from-transparent via-purple-400/30 to-transparent"></div>
       </div>
 
-      <div className="dark-container relative z-10">
+      <div className="light-container relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto mb-20">
-          <div className="inline-flex items-center px-6 py-3 rounded-full bg-zinc-800/60 border border-cyan-500/30 mb-8 backdrop-blur-sm">
-            <Sparkles className="w-4 h-4 mr-2 text-cyan-400" />
-            <span className="text-sm font-medium text-zinc-300">All Website Types</span>
+          <div className="inline-flex items-center px-6 py-3 rounded-full bg-blue-50 border border-blue-200 mb-8 backdrop-blur-sm">
+            <Sparkles className="w-4 h-4 mr-2 text-blue-600" />
+            <span className="text-sm font-medium text-blue-600">All Website Types</span>
           </div>
           
           <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
-            <span className="text-white">Universal Performance</span>
+            <span className="text-slate-900">Universal Performance</span>
             <br />
-            <span className="dark-gradient-text">Engineering Services</span>
+            <span className="light-gradient-text">Engineering Services</span>
           </h2>
           
-          <p className="text-xl text-zinc-300 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
             15+ years optimizing every type of website and application. From e-commerce to enterprise, 
             mobile apps to SaaS platforms - we make everything lightning fast.
           </p>
@@ -114,7 +114,7 @@ const ServicesSection = () => {
           {services.map((service, index) => {
             const colors = getColorClasses(service.color);
             return (
-              <Card key={index} className="group bg-zinc-800/40 border border-zinc-700/50 rounded-2xl p-8 hover:bg-zinc-800/60 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-500/10 backdrop-blur-sm">
+              <Card key={index} className="group bg-white/80 border border-slate-200 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all duration-500 hover:scale-[1.02] backdrop-blur-sm">
                 <CardContent className="p-0">
                   {/* Icon & Metrics */}
                   <div className="flex justify-between items-start mb-6">
@@ -129,10 +129,10 @@ const ServicesSection = () => {
                   </div>
                   
                   {/* Content */}
-                  <h3 className="text-2xl font-semibold mb-4 text-white group-hover:text-blue-300 transition-colors">
+                  <h3 className="text-2xl font-semibold mb-4 text-slate-900 group-hover:text-blue-600 transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-zinc-400 mb-6 leading-relaxed">
+                  <p className="text-slate-600 mb-6 leading-relaxed">
                     {service.description}
                   </p>
                   
@@ -140,7 +140,7 @@ const ServicesSection = () => {
                   <div className="mb-8">
                     <ul className="space-y-2">
                       {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-sm text-zinc-400">
+                        <li key={idx} className="flex items-center text-sm text-slate-600">
                           <div className={`w-1.5 h-1.5 ${colors.bg} rounded-full mr-3`}></div>
                           {feature}
                         </li>
@@ -151,7 +151,7 @@ const ServicesSection = () => {
                   {/* CTA */}
                   <Link 
                     to={service.link} 
-                    className={`inline-flex items-center ${colors.text} hover:text-blue-300 font-medium transition-colors group-hover:gap-3 gap-2 ${service.link === "#" ? "pointer-events-none opacity-50" : ""}`}
+                    className={`inline-flex items-center ${colors.text} hover:text-blue-600 font-medium transition-colors group-hover:gap-3 gap-2 ${service.link === "#" ? "pointer-events-none opacity-50" : ""}`}
                   >
                     Optimize Now
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -164,21 +164,21 @@ const ServicesSection = () => {
 
         {/* Universal CTA Section */}
         <div className="text-center">
-          <div className="dark-glass rounded-3xl p-16 max-w-5xl mx-auto border border-zinc-700/50 backdrop-blur-lg">
-            <TrendingUp className="h-16 w-16 text-cyan-400 mx-auto mb-8" />
-            <h3 className="text-4xl font-bold mb-6 text-white">
-              Ready to <span className="dark-gradient-text">Optimize</span> Any Website Type?
+          <div className="light-glass rounded-3xl p-16 max-w-5xl mx-auto border border-slate-200 backdrop-blur-lg">
+            <TrendingUp className="h-16 w-16 text-blue-600 mx-auto mb-8" />
+            <h3 className="text-4xl font-bold mb-6 text-slate-900">
+              Ready to <span className="light-gradient-text">Optimize</span> Any Website Type?
             </h3>
-            <p className="text-xl text-zinc-300 mb-10 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-xl text-slate-600 mb-10 leading-relaxed max-w-3xl mx-auto">
               Whether you're running e-commerce, SaaS, enterprise applications, or mobile apps - 
               our 15+ years of performance expertise will transform your digital presence.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button className="dark-button text-lg h-14 px-10 rounded-xl group relative overflow-hidden shadow-2xl neon-glow">
+              <Button className="light-button text-lg h-14 px-10 rounded-xl group relative overflow-hidden shadow-2xl performance-glow">
                 <span className="relative z-10">Start Free Analysis</span>
                 <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform relative z-10" />
               </Button>
-              <Button className="dark-button-outline text-lg h-14 px-10 rounded-xl">
+              <Button className="light-button-outline text-lg h-14 px-10 rounded-xl">
                 Schedule Performance Consultation
               </Button>
             </div>

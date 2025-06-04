@@ -7,23 +7,23 @@
 
 @layer base {
   :root {
-    --background: 9 9 11;
-    --foreground: 250 250 250;
+    --background: 255 255 255;
+    --foreground: 15 23 42;
 
-    --card: 24 24 27;
-    --card-foreground: 250 250 250;
+    --card: 248 250 252;
+    --card-foreground: 15 23 42;
 
-    --popover: 24 24 27;
-    --popover-foreground: 250 250 250;
+    --popover: 255 255 255;
+    --popover-foreground: 15 23 42;
 
     --primary: 59 130 246;
     --primary-foreground: 255 255 255;
 
-    --secondary: 39 39 42;
-    --secondary-foreground: 250 250 250;
+    --secondary: 241 245 249;
+    --secondary-foreground: 15 23 42;
 
-    --muted: 39 39 42;
-    --muted-foreground: 161 161 170;
+    --muted: 248 250 252;
+    --muted-foreground: 100 116 139;
 
     --accent: 139 92 246;
     --accent-foreground: 255 255 255;
@@ -31,8 +31,8 @@
     --destructive: 239 68 68;
     --destructive-foreground: 255 255 255;
 
-    --border: 39 39 42;
-    --input: 39 39 42;
+    --border: 226 232 240;
+    --input: 241 245 249;
     --ring: 59 130 246;
 
     --radius: 12px;
@@ -45,8 +45,8 @@
   }
 
   body {
-    @apply bg-zinc-900 text-foreground font-body;
-    background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 50%, #0f0f0f 100%);
+    @apply bg-background text-foreground font-body;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
     font-feature-settings: "rlig" 1, "calt" 1;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
@@ -62,20 +62,20 @@
     @apply text-5xl md:text-6xl lg:text-7xl;
     font-weight: 700;
     letter-spacing: -0.02em;
-    background: linear-gradient(135deg, #60A5FA 0%, #A78BFA 50%, #34D399 100%);
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #06b6d4 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   h2 {
-    @apply text-4xl md:text-5xl text-white;
+    @apply text-4xl md:text-5xl text-slate-900;
     font-weight: 600;
     letter-spacing: -0.01em;
   }
 
   h3 {
-    @apply text-2xl md:text-3xl text-white;
+    @apply text-2xl md:text-3xl text-slate-900;
     font-weight: 600;
   }
 
@@ -85,73 +85,73 @@
 }
 
 @layer components {
-  .dark-gradient-text {
-    background: linear-gradient(135deg, #60A5FA 0%, #A78BFA 50%, #34D399 100%);
+  .light-gradient-text {
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #06b6d4 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
   
-  .dark-section {
+  .light-section {
     @apply py-24 md:py-32 relative;
   }
   
-  .dark-container {
+  .light-container {
     @apply px-6 mx-auto max-w-7xl lg:px-8 relative z-10;
   }
 
-  .dark-card {
-    @apply bg-zinc-800/50 border border-zinc-700/50 rounded-2xl p-8 shadow-2xl backdrop-blur-sm;
+  .light-card {
+    @apply bg-white/80 border border-slate-200 rounded-2xl p-8 shadow-xl backdrop-blur-sm;
     background: linear-gradient(135deg, 
-      rgba(39, 39, 42, 0.6) 0%, 
-      rgba(24, 24, 27, 0.8) 100%);
-    border: 1px solid rgba(63, 63, 70, 0.5);
+      rgba(255, 255, 255, 0.9) 0%, 
+      rgba(248, 250, 252, 0.8) 100%);
+    border: 1px solid rgba(226, 232, 240, 0.8);
   }
 
-  .dark-card-hover {
-    @apply hover:scale-[1.02] hover:shadow-blue-500/10 hover:shadow-2xl transition-all duration-500 ease-out;
+  .light-card-hover {
+    @apply hover:scale-[1.02] hover:shadow-blue-500/20 hover:shadow-2xl transition-all duration-500 ease-out;
   }
 
-  .dark-button {
+  .light-button {
     @apply bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-blue-500/25 hover:shadow-xl;
-    background: linear-gradient(135deg, #2563EB 0%, #7C3AED 100%);
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
   }
 
-  .dark-button-outline {
-    @apply border-2 border-blue-500/50 text-blue-400 hover:bg-blue-500/10 font-medium px-8 py-4 rounded-xl transition-all duration-300 bg-zinc-800/50;
+  .light-button-outline {
+    @apply border-2 border-blue-500/70 text-blue-600 hover:bg-blue-50 font-medium px-8 py-4 rounded-xl transition-all duration-300 bg-white/80;
   }
 
-  .dark-glass {
-    background: rgba(24, 24, 27, 0.7);
+  .light-glass {
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(63, 63, 70, 0.5);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   }
 
-  .dark-badge {
-    @apply inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-zinc-800/60 text-blue-300 border border-zinc-700/50 backdrop-blur-sm;
+  .light-badge {
+    @apply inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-blue-50 text-blue-600 border border-blue-200 backdrop-blur-sm;
   }
 
-  .dark-stat {
+  .light-stat {
     @apply text-center;
   }
 
-  .dark-stat-number {
-    @apply text-4xl md:text-5xl font-bold dark-gradient-text mb-2;
+  .light-stat-number {
+    @apply text-4xl md:text-5xl font-bold light-gradient-text mb-2;
   }
 
-  .dark-stat-label {
-    @apply text-zinc-400 font-medium;
+  .light-stat-label {
+    @apply text-slate-600 font-medium;
   }
 
-  .grid-pattern-dark {
+  .grid-pattern-light {
     background-image: 
       linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
       linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
     background-size: 50px 50px;
   }
 
-  .neon-glow {
+  .performance-glow {
     box-shadow: 
       0 0 5px rgba(59, 130, 246, 0.3),
       0 0 20px rgba(59, 130, 246, 0.2),
@@ -160,7 +160,7 @@
 }
 
 @layer utilities {
-  @keyframes dark-float {
+  @keyframes light-float {
     0%, 100% {
       transform: translateY(0px) rotateY(0deg);
     }
@@ -169,7 +169,7 @@
     }
   }
 
-  @keyframes pulse-neon {
+  @keyframes pulse-performance {
     0%, 100% {
       opacity: 1;
       box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
@@ -180,15 +180,30 @@
     }
   }
 
-  .animate-dark-float {
-    animation: dark-float 6s ease-in-out infinite;
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
-  .animate-pulse-neon {
-    animation: pulse-neon 3s ease-in-out infinite;
+  .animate-light-float {
+    animation: light-float 6s ease-in-out infinite;
   }
 
-  .text-glow {
+  .animate-pulse-performance {
+    animation: pulse-performance 3s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.8s ease-out forwards;
+  }
+
+  .text-performance-glow {
     text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
   }
 

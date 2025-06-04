@@ -98,7 +98,7 @@ const TestimonialsSection = () => {
         <Star
           key={i}
           className={`h-4 w-4 ${
-            i < rating ? "text-yellow-400 fill-yellow-400" : "text-zinc-600"
+            i < rating ? "text-yellow-500 fill-yellow-500" : "text-slate-300"
           }`}
         />
       ));
@@ -117,18 +117,18 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section id="testimonials" className="dark-section bg-zinc-900">
-      <div className="dark-container">
+    <section id="testimonials" className="light-section bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50">
+      <div className="light-container">
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto mb-20">
-          <div className="dark-badge mb-6 animate-slide-up">
+          <div className="light-badge mb-6 animate-slide-up">
             <Users className="w-4 h-4 mr-2" />
             <span>All Website Types Success Stories</span>
           </div>
-          <h2 className="mb-8 text-white">
-            Trusted by <span className="dark-gradient-text">Every Industry</span>
+          <h2 className="mb-8 text-slate-900">
+            Trusted by <span className="light-gradient-text">Every Industry</span>
           </h2>
-          <p className="text-xl text-zinc-300 leading-relaxed">
+          <p className="text-xl text-slate-600 leading-relaxed">
             From e-commerce to enterprise, SaaS to mobile apps - see how our 15+ years of performance expertise transforms every type of website and application.
           </p>
         </div>
@@ -136,7 +136,7 @@ const TestimonialsSection = () => {
         {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {displayedTestimonials.map((testimonial, index) => (
-            <Card key={testimonial.id} className="dark-card dark-card-hover border-0 group animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
+            <Card key={testimonial.id} className="light-card light-card-hover border-0 group animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
               <CardContent className="p-8">
                 {/* Header */}
                 <div className="flex justify-between items-start mb-6">
@@ -151,11 +151,11 @@ const TestimonialsSection = () => {
                       {testimonial.icon}
                     </div>
                   </div>
-                  <span className="text-sm font-medium text-zinc-400">{testimonial.type}</span>
+                  <span className="text-sm font-medium text-slate-600">{testimonial.type}</span>
                 </div>
                 
                 {/* Testimonial Content */}
-                <p className="text-zinc-300 mb-8 leading-relaxed min-h-[120px]">
+                <p className="text-slate-700 mb-8 leading-relaxed min-h-[120px]">
                   "{testimonial.content}"
                 </p>
                 
@@ -165,8 +165,8 @@ const TestimonialsSection = () => {
                     {testimonial.logo}
                   </div>
                   <div>
-                    <p className="font-semibold text-white">{testimonial.author}</p>
-                    <p className="text-sm text-zinc-400">{testimonial.position}</p>
+                    <p className="font-semibold text-slate-900">{testimonial.author}</p>
+                    <p className="text-sm text-slate-600">{testimonial.position}</p>
                   </div>
                 </div>
               </CardContent>
@@ -180,7 +180,7 @@ const TestimonialsSection = () => {
             variant="outline" 
             size="icon" 
             onClick={prevPage} 
-            className="rounded-full border-zinc-600 hover:bg-zinc-800 hover:border-blue-500 text-zinc-300"
+            className="rounded-full border-slate-300 hover:bg-slate-50 hover:border-blue-500 text-slate-600"
           >
             <ChevronLeft className="h-4 w-4" />
           </Button>
@@ -194,7 +194,7 @@ const TestimonialsSection = () => {
               className={`rounded-full ${
                 currentPage === index 
                   ? "bg-blue-500 hover:bg-blue-600 border-blue-500" 
-                  : "border-zinc-600 hover:bg-zinc-800 hover:border-blue-500 text-zinc-300"
+                  : "border-slate-300 hover:bg-slate-50 hover:border-blue-500 text-slate-600"
               }`}
             >
               {index + 1}
@@ -205,38 +205,38 @@ const TestimonialsSection = () => {
             variant="outline" 
             size="icon" 
             onClick={nextPage} 
-            className="rounded-full border-zinc-600 hover:bg-zinc-800 hover:border-blue-500 text-zinc-300"
+            className="rounded-full border-slate-300 hover:bg-slate-50 hover:border-blue-500 text-slate-600"
           >
             <ChevronRight className="h-4 w-4" />
           </Button>
         </div>
 
         {/* Universal Stats Section */}
-        <div className="dark-glass rounded-3xl p-12 shadow-2xl">
+        <div className="light-glass rounded-3xl p-12 shadow-2xl">
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 text-center">
             <div className="animate-slide-up">
-              <div className="dark-stat-number">2000+</div>
-              <div className="dark-stat-label">Total Websites</div>
+              <div className="light-stat-number">2000+</div>
+              <div className="light-stat-label">Total Websites</div>
             </div>
             <div className="animate-slide-up" style={{ animationDelay: '0.1s' }}>
-              <div className="dark-stat-number">500+</div>
-              <div className="dark-stat-label">E-commerce Sites</div>
+              <div className="light-stat-number">500+</div>
+              <div className="light-stat-label">E-commerce Sites</div>
             </div>
             <div className="animate-slide-up" style={{ animationDelay: '0.2s' }}>
-              <div className="dark-stat-number">300+</div>
-              <div className="dark-stat-label">SaaS Platforms</div>
+              <div className="light-stat-number">300+</div>
+              <div className="light-stat-label">SaaS Platforms</div>
             </div>
             <div className="animate-slide-up" style={{ animationDelay: '0.3s' }}>
-              <div className="dark-stat-number">200+</div>
-              <div className="dark-stat-label">Enterprise Apps</div>
+              <div className="light-stat-number">200+</div>
+              <div className="light-stat-label">Enterprise Apps</div>
             </div>
             <div className="animate-slide-up" style={{ animationDelay: '0.4s' }}>
-              <div className="dark-stat-number">1000+</div>
-              <div className="dark-stat-label">Mobile Apps</div>
+              <div className="light-stat-number">1000+</div>
+              <div className="light-stat-label">Mobile Apps</div>
             </div>
             <div className="animate-slide-up" style={{ animationDelay: '0.5s' }}>
-              <div className="dark-stat-number">15+</div>
-              <div className="dark-stat-label">Years Expertise</div>
+              <div className="light-stat-number">15+</div>
+              <div className="light-stat-label">Years Expertise</div>
             </div>
           </div>
         </div>

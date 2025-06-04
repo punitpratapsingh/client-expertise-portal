@@ -69,17 +69,17 @@ const PricingSection = () => {
   ];
 
   return (
-    <section id="pricing" className="dark-section bg-zinc-900">
-      <div className="dark-container">
+    <section id="pricing" className="light-section bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50">
+      <div className="light-container">
         <div className="text-center max-w-4xl mx-auto mb-20">
-          <div className="dark-badge mb-6 animate-slide-up">
+          <div className="light-badge mb-6 animate-slide-up">
             <Zap className="w-4 h-4 mr-2" />
             <span>Performance Investment</span>
           </div>
-          <h2 className="mb-8 text-white">
-            Simple, Transparent <span className="dark-gradient-text">Pricing</span>
+          <h2 className="mb-8 text-slate-900">
+            Simple, Transparent <span className="light-gradient-text">Pricing</span>
           </h2>
-          <p className="text-xl text-zinc-300 leading-relaxed">
+          <p className="text-xl text-slate-600 leading-relaxed">
             Choose the performance optimization plan that fits your needs. All plans include our 15+ years of expertise and performance improvement guarantee.
           </p>
         </div>
@@ -88,8 +88,8 @@ const PricingSection = () => {
           {plans.map((plan, index) => (
             <Card 
               key={index} 
-              className={`dark-card border-0 relative overflow-hidden group animate-slide-up ${
-                plan.mostPopular ? "dark-card-hover scale-105" : "dark-card-hover"
+              className={`light-card border-0 relative overflow-hidden group animate-slide-up ${
+                plan.mostPopular ? "light-card-hover scale-105 border-2 border-blue-300" : "light-card-hover"
               }`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
@@ -103,19 +103,19 @@ const PricingSection = () => {
                 <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${plan.gradient} flex items-center justify-center mx-auto mb-4 text-white`}>
                   {plan.icon}
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
-                <div className="text-4xl font-bold dark-gradient-text mb-2">{plan.price}</div>
-                <p className="text-zinc-400">{plan.description}</p>
+                <h3 className="text-2xl font-bold text-slate-900 mb-2">{plan.name}</h3>
+                <div className="text-4xl font-bold light-gradient-text mb-2">{plan.price}</div>
+                <p className="text-slate-600">{plan.description}</p>
               </CardHeader>
               
               <CardContent className="px-8 pb-8">
                 <ul className="space-y-4">
                   {plan.features.map((feature, fIndex) => (
                     <li key={fIndex} className="flex items-start">
-                      <div className="flex-shrink-0 w-5 h-5 rounded-full bg-blue-500/20 flex items-center justify-center mr-3 mt-0.5">
-                        <Check className="h-3 w-3 text-blue-400" />
+                      <div className="flex-shrink-0 w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center mr-3 mt-0.5">
+                        <Check className="h-3 w-3 text-blue-600" />
                       </div>
-                      <span className="text-zinc-300 text-sm leading-relaxed">{feature}</span>
+                      <span className="text-slate-700 text-sm leading-relaxed">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -125,8 +125,8 @@ const PricingSection = () => {
                 <Button 
                   className={`w-full ${
                     plan.mostPopular 
-                      ? "dark-button" 
-                      : "dark-button-outline"
+                      ? "light-button" 
+                      : "light-button-outline"
                   } h-12 text-base font-medium`}
                 >
                   {plan.buttonText}
@@ -137,37 +137,37 @@ const PricingSection = () => {
         </div>
 
         {/* Additional Information Section */}
-        <div className="dark-glass rounded-3xl p-12 text-center">
+        <div className="light-glass rounded-3xl p-12 text-center">
           <div className="mb-8">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Not Sure Which Plan? <span className="dark-gradient-text">We're Here to Help</span>
+            <h3 className="text-2xl font-bold text-slate-900 mb-4">
+              Not Sure Which Plan? <span className="light-gradient-text">We're Here to Help</span>
             </h3>
-            <p className="text-zinc-400 text-lg mb-8">
+            <p className="text-slate-600 text-lg mb-8">
               Schedule a free 30-minute consultation to discuss your specific performance needs and get a custom recommendation.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-            <div className="text-center p-6 rounded-2xl bg-zinc-800/50 border border-zinc-700/50">
-              <Phone className="h-8 w-8 text-blue-400 mx-auto mb-4" />
-              <h4 className="text-white font-semibold mb-2">Free Consultation</h4>
-              <p className="text-zinc-400 text-sm mb-4">30-minute strategy session to analyze your current performance</p>
-              <Button className="dark-button-outline">
+            <div className="text-center p-6 rounded-2xl bg-blue-50 border border-blue-200">
+              <Phone className="h-8 w-8 text-blue-600 mx-auto mb-4" />
+              <h4 className="text-slate-900 font-semibold mb-2">Free Consultation</h4>
+              <p className="text-slate-600 text-sm mb-4">30-minute strategy session to analyze your current performance</p>
+              <Button className="light-button-outline">
                 Book Free Call
               </Button>
             </div>
-            <div className="text-center p-6 rounded-2xl bg-zinc-800/50 border border-zinc-700/50">
-              <Zap className="h-8 w-8 text-green-400 mx-auto mb-4" />
-              <h4 className="text-white font-semibold mb-2">Performance Audit</h4>
-              <p className="text-zinc-400 text-sm mb-4">Comprehensive analysis of your website's current performance</p>
-              <Button className="dark-button-outline">
+            <div className="text-center p-6 rounded-2xl bg-green-50 border border-green-200">
+              <Zap className="h-8 w-8 text-green-600 mx-auto mb-4" />
+              <h4 className="text-slate-900 font-semibold mb-2">Performance Audit</h4>
+              <p className="text-slate-600 text-sm mb-4">Comprehensive analysis of your website's current performance</p>
+              <Button className="light-button-outline">
                 Get Free Audit
               </Button>
             </div>
           </div>
 
           <div className="text-center">
-            <p className="text-zinc-500 text-sm">
+            <p className="text-slate-500 text-sm">
               💡 All plans include our performance improvement guarantee. If we don't improve your Core Web Vitals scores, you don't pay.
             </p>
           </div>
