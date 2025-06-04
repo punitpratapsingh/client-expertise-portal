@@ -1,57 +1,75 @@
 
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { ChevronLeft, ChevronRight, Star, Quote, Users } from "lucide-react";
+import { ChevronLeft, ChevronRight, Star, Quote, Users, ShoppingCart, Monitor, Building, Smartphone, Globe, Database } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const testimonials = [
   {
     id: 1,
-    content: "Their 15+ year React expertise transformed our enterprise application. Load times dropped by 75% and our conversion rate increased by 40%. Absolutely incredible results.",
+    content: "Our e-commerce conversion rate jumped 340% after Performetix optimized our checkout flow. Black Friday sales hit record highs with zero downtime. Absolutely transformational.",
     author: "Sarah Johnson",
-    position: "VP of Engineering, TechNova Inc.",
+    position: "VP of E-commerce, MegaRetail",
     rating: 5,
-    logo: "TechNova"
+    logo: "MR",
+    type: "E-commerce",
+    icon: <ShoppingCart className="w-4 h-4" />,
+    color: "blue"
   },
   {
     id: 2,
-    content: "After struggling with React performance issues for months, their senior team fixed our Core Web Vitals in just two weeks. Google rankings improved by 300%.",
+    content: "Our SaaS dashboard went from sluggish to lightning-fast. User engagement increased 290% and churn dropped by half. The team's expertise in React optimization is unmatched.",
     author: "Michael Chen",
-    position: "CTO, EcoCommerce",
+    position: "CTO, CloudFlow SaaS",
     rating: 5,
-    logo: "EcoCommerce"
+    logo: "CF",
+    type: "SaaS Platform",
+    icon: <Monitor className="w-4 h-4" />,
+    color: "purple"
   },
   {
     id: 3,
-    content: "The team's deep React expertise saved our e-commerce platform during Black Friday. Their optimization delivered 500% ROI in the first quarter alone.",
+    content: "Enterprise-grade performance for our global application. 450% efficiency improvement across all regions. Their microservices optimization saved millions in infrastructure costs.",
     author: "Emma Rodriguez",
-    position: "Digital Director, FashionRetail",
+    position: "Enterprise Architect, GlobalTech",
     rating: 5,
-    logo: "FashionRetail" 
+    logo: "GT",
+    type: "Enterprise",
+    icon: <Building className="w-4 h-4" />,
+    color: "emerald"
   },
   {
     id: 4,
-    content: "Their methodical approach to React optimization not only improved our Lighthouse scores but also reduced our server costs by 60%. World-class engineering.",
+    content: "Mobile app performance increased 520% with their optimization. Battery usage dropped, user satisfaction soared. Our app store ratings went from 3.2 to 4.9 stars.",
     author: "David Park",
-    position: "Head of Technology, HealthPlus",
+    position: "Mobile Lead, AppVenture",
     rating: 5,
-    logo: "HealthPlus"
+    logo: "AV",
+    type: "Mobile App",
+    icon: <Smartphone className="w-4 h-4" />,
+    color: "orange"
   },
   {
     id: 5,
-    content: "Working with this senior React team was seamless. They identified performance bottlenecks we didn't know existed and delivered enterprise-grade solutions.",
+    content: "Content delivery speed improved 380% globally. Our media-rich website now loads instantly worldwide. SEO rankings jumped to page 1 across all target keywords.",
     author: "Olivia Martinez",
-    position: "Product Manager, FinServe Solutions",
+    position: "Digital Director, MediaFlow",
     rating: 5,
-    logo: "FinServe"
+    logo: "MF",
+    type: "Content Site",
+    icon: <Globe className="w-4 h-4" />,
+    color: "cyan"
   },
   {
     id: 6,
-    content: "The difference in our React app's performance is night and day. Our enterprise customers have noticed and mentioned it in every feedback session.",
+    content: "Backend API response times improved 670%. Database queries optimized beyond recognition. Our entire tech stack now performs like a Formula 1 car.",
     author: "James Wilson",
-    position: "CEO, LocalBiz Platform",
+    position: "Backend Architect, DataDyne",
     rating: 5,
-    logo: "LocalBiz"
+    logo: "DD",
+    type: "Backend/API",
+    icon: <Database className="w-4 h-4" />,
+    color: "red"
   }
 ];
 
@@ -86,6 +104,18 @@ const TestimonialsSection = () => {
       ));
   };
 
+  const getColorClasses = (color: string) => {
+    const colorMap: Record<string, any> = {
+      blue: "from-blue-500 to-cyan-500",
+      purple: "from-purple-500 to-pink-500",
+      emerald: "from-emerald-500 to-green-500",
+      orange: "from-orange-500 to-yellow-500",
+      cyan: "from-cyan-500 to-blue-500",
+      red: "from-red-500 to-pink-500"
+    };
+    return colorMap[color] || colorMap.blue;
+  };
+
   return (
     <section id="testimonials" className="dark-section bg-zinc-900">
       <div className="dark-container">
@@ -93,13 +123,13 @@ const TestimonialsSection = () => {
         <div className="text-center max-w-4xl mx-auto mb-20">
           <div className="dark-badge mb-6 animate-slide-up">
             <Users className="w-4 h-4 mr-2" />
-            <span>Enterprise Success Stories</span>
+            <span>All Website Types Success Stories</span>
           </div>
           <h2 className="mb-8 text-white">
-            Trusted by <span className="dark-gradient-text">Industry Leaders</span>
+            Trusted by <span className="dark-gradient-text">Every Industry</span>
           </h2>
           <p className="text-xl text-zinc-300 leading-relaxed">
-            Don't just take our word for it. Here's what enterprise clients say about our 15+ years of React performance expertise.
+            From e-commerce to enterprise, SaaS to mobile apps - see how our 15+ years of performance expertise transforms every type of website and application.
           </p>
         </div>
 
@@ -114,6 +144,16 @@ const TestimonialsSection = () => {
                   <Quote className="h-6 w-6 text-blue-400/50" />
                 </div>
                 
+                {/* Website Type Badge */}
+                <div className="flex items-center mb-4">
+                  <div className={`p-2 rounded-lg bg-gradient-to-r ${getColorClasses(testimonial.color)} mr-3`}>
+                    <div className="text-white">
+                      {testimonial.icon}
+                    </div>
+                  </div>
+                  <span className="text-sm font-medium text-zinc-400">{testimonial.type}</span>
+                </div>
+                
                 {/* Testimonial Content */}
                 <p className="text-zinc-300 mb-8 leading-relaxed min-h-[120px]">
                   "{testimonial.content}"
@@ -121,8 +161,8 @@ const TestimonialsSection = () => {
                 
                 {/* Author */}
                 <div className="flex items-center">
-                  <div className="bg-gradient-to-br from-blue-500 to-purple-500 text-white font-semibold h-12 w-12 rounded-xl flex items-center justify-center mr-4 shadow-lg">
-                    {testimonial.logo.substring(0, 2)}
+                  <div className={`bg-gradient-to-br ${getColorClasses(testimonial.color)} text-white font-semibold h-12 w-12 rounded-xl flex items-center justify-center mr-4 shadow-lg`}>
+                    {testimonial.logo}
                   </div>
                   <div>
                     <p className="font-semibold text-white">{testimonial.author}</p>
@@ -171,24 +211,32 @@ const TestimonialsSection = () => {
           </Button>
         </div>
 
-        {/* Stats Section */}
+        {/* Universal Stats Section */}
         <div className="dark-glass rounded-3xl p-12 shadow-2xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 text-center">
             <div className="animate-slide-up">
-              <div className="dark-stat-number">1000+</div>
-              <div className="dark-stat-label">React Apps Optimized</div>
+              <div className="dark-stat-number">2000+</div>
+              <div className="dark-stat-label">Total Websites</div>
             </div>
             <div className="animate-slide-up" style={{ animationDelay: '0.1s' }}>
-              <div className="dark-stat-number">85%</div>
-              <div className="dark-stat-label">Average Speed Increase</div>
+              <div className="dark-stat-number">500+</div>
+              <div className="dark-stat-label">E-commerce Sites</div>
             </div>
             <div className="animate-slide-up" style={{ animationDelay: '0.2s' }}>
-              <div className="dark-stat-number">67%</div>
-              <div className="dark-stat-label">Revenue Growth</div>
+              <div className="dark-stat-number">300+</div>
+              <div className="dark-stat-label">SaaS Platforms</div>
             </div>
             <div className="animate-slide-up" style={{ animationDelay: '0.3s' }}>
+              <div className="dark-stat-number">200+</div>
+              <div className="dark-stat-label">Enterprise Apps</div>
+            </div>
+            <div className="animate-slide-up" style={{ animationDelay: '0.4s' }}>
+              <div className="dark-stat-number">1000+</div>
+              <div className="dark-stat-label">Mobile Apps</div>
+            </div>
+            <div className="animate-slide-up" style={{ animationDelay: '0.5s' }}>
               <div className="dark-stat-number">15+</div>
-              <div className="dark-stat-label">Years React Expertise</div>
+              <div className="dark-stat-label">Years Expertise</div>
             </div>
           </div>
         </div>
