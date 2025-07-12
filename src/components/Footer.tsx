@@ -95,8 +95,8 @@ const Footer = () => {
               <li className="flex items-start group">
                 <MapPin className="h-5 w-5 text-blue-600 mr-3 mt-0.5 group-hover:scale-110 transition-transform" />
                 <span className="text-slate-600 group-hover:text-slate-800 transition-colors">
-                  123 Performance Street<br />
-                  San Francisco, CA 94103
+                  16 Lodha Signet <br />
+                  Mumbai, MH 400012, India
                 </span>
               </li>
               <li className="flex items-center group">
