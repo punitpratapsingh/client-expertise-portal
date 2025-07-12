@@ -7,7 +7,7 @@ const PricingSection = () => {
   const plans = [
     {
       name: "Performance Starter",
-      price: "$1,499",
+      price: "$499",
       description: "Perfect for small websites and blogs",
       features: [
         "Complete Core Web Vitals audit",
@@ -26,7 +26,7 @@ const PricingSection = () => {
     },
     {
       name: "Performance Pro",
-      price: "$2,999", 
+      price: "$999", 
       description: "Ideal for e-commerce and growing businesses",
       features: [
         "Everything in Starter plan",
