@@ -63,7 +63,7 @@ const HeroSection = () => {
             </div>
             <div className="text-center p-6 rounded-2xl bg-white/60 border border-slate-200 shadow-lg">
               <Zap className="h-8 w-8 text-orange-500 mx-auto mb-3" />
-              <div className="text-3xl font-bold text-slate-900 mb-1">2000+</div>
+              <div className="text-3xl font-bold text-slate-900 mb-1">200+</div>
               <div className="text-slate-600 text-sm">Sites Optimized</div>
             </div>
           </div>
